@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Anwendungscontroler.cs" />
+    <Compile Include="AWLQuellcode.cs" />
     <Compile Include="Consoleview.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

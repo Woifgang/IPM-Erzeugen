@@ -10,8 +10,8 @@ namespace IPM_Erzeugen
     {
         static void Main(string[] args)
         {
-
-            QuelleErstellen quelleErstellen = new QuelleErstellen();
+            AWLQuellcode awlQuellecode = new AWLQuellcode();
+            QuelleErstellen quelleErstellen = new QuelleErstellen(awlQuellecode);
             Consoleview view = new Consoleview(quelleErstellen);
             Anwendungscontroler controler = new Anwendungscontroler(view, quelleErstellen );
 
