@@ -18,6 +18,9 @@ namespace IPM_Erzeugen
 
         public void HoleBenutzereingabe()
         {
+            quelleErstellen.DBnummer = BenutzerEingabe("DB Nummer eintragen: ");
+            quelleErstellen.Stationbezeichnung = BenutzerEingabe("Stationsbezeichnung eintragen: ");
+            quelleErstellen.Merkmalsblock = BenutzerEingabe("Merkmalsblock siehe UDT eintragen: ");
             quelleErstellen.MerkmalKennung = BenutzerEingabe("Merkmalkennung eintragen: ");
             quelleErstellen.MerkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");
             quelleErstellen.MerkmalTyp = BenutzerEingabe("Merkmal Typ (z.B.: 10, 20, F) eintragen: ");
