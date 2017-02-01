@@ -10,8 +10,10 @@ namespace IPM_Erzeugen
     {
         static void Main(string[] args)
         {
-            Consoleview view = new Consoleview();
-            Anwendungscontroler controler = new Anwendungscontroler(view);
+
+            QuelleErstellen quelleErstellen = new QuelleErstellen();
+            Consoleview view = new Consoleview(quelleErstellen);
+            Anwendungscontroler controler = new Anwendungscontroler(view, quelleErstellen );
 
             controler.AnzeigeConsole();
         }

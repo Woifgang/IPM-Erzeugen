@@ -8,16 +8,19 @@ namespace IPM_Erzeugen
 {
     class Consoleview
     {
-        public Consoleview()
-        {
 
+        private QuelleErstellen quelleErstellen;
+
+        public Consoleview(QuelleErstellen quelleErstellen)
+        {
+            this.quelleErstellen = quelleErstellen;
         }
 
         public void HoleBenutzereingabe()
         {
-            string merkmalKennung = BenutzerEingabe("Merkmalkennung eintragen: ");
-            string merkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");
-            string merkmalTyp = BenutzerEingabe("Merkmal Typ (z.B.: 10, 20, F) eintragen: ");
+            quelleErstellen.MerkmalKennung = BenutzerEingabe("Merkmalkennung eintragen: ");
+            quelleErstellen.MerkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");
+            quelleErstellen.MerkmalTyp = BenutzerEingabe("Merkmal Typ (z.B.: 10, 20, F) eintragen: ");
         }
 
         private string BenutzerEingabe(string eingabe)

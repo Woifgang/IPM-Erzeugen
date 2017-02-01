@@ -1,0 +1,9 @@
+ToDo:
+- AWL Quelle generieren mit den eingegeben Daten
+-- Layout erstellen 
+-- Werten die Zwischen gespeichert wurden sollen in das Layout eingetragen werden
+
+
+
+Erledigt:
+- Eingetragene Werte in Log Datei speichern
