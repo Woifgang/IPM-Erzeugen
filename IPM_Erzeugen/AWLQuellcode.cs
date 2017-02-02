@@ -8,19 +8,12 @@ namespace IPM_Erzeugen
 {
     class AWLQuellcode
     {
-        public AWLQuellcode()
+        private Consoleview view;
+
+        public AWLQuellcode(Consoleview view)
         {
-
+            this.view = view;
         }
-
-
-        public string DBnummer { get; set; }
-        public string Stationbezeichnung { get; set; }
-        public string Merkmalsblock { get; set; }
-        public string MerkmalKennung { get; set; }
-        public string MerkmalBeschreibung { get; set; }
-        public string MerkmalTyp { get; set; }
-
 
         public string FunktionStart { get; private  set; }
         public string Titel { get; private set; }
@@ -91,7 +84,7 @@ namespace IPM_Erzeugen
                 //         DBnummer + Stationbezeichnung + Merkmalsblock +
                 string kennung = Convert.ToString(i);
 
-                tmp[i] = "T DB" + DBnummer + ".daten." + Stationbezeichnung + "." + Merkmalsblock + "." + wert + "[" + kennung + "];";
+                tmp[i] = "T DB" + view.DBnummer + ".daten." + view.Stationbezeichnung + "." + view.Merkmalsblock + "." + wert + "[" + kennung + "];";
             }
             return tmp;
         }
