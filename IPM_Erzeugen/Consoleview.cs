@@ -26,6 +26,12 @@ namespace IPM_Erzeugen
             quelleErstellen.MerkmalTyp = BenutzerEingabe("Merkmal Typ (z.B.: 10, 20, F) eintragen: ");
         }
 
+        public string BeendeProgramm()
+        {
+            Console.Write("Zum Beenden bitte Return drücken");
+            return Console.ReadLine();
+        }
+
         private string BenutzerEingabe(string eingabe)
         {
             Console.Write(eingabe);

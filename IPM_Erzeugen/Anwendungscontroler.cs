@@ -20,7 +20,8 @@ namespace IPM_Erzeugen
         public void AnzeigeConsole()
         {
             view.HoleBenutzereingabe();
-            quelleErstellen.ErzeugeLogdatei();
+            quelleErstellen.ErzeugeAWLQuellcode();
+            view.BeendeProgramm();
         }
 
     }

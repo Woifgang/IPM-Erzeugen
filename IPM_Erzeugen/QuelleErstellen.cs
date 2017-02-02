@@ -22,25 +22,45 @@ namespace IPM_Erzeugen
         public string MerkmalBeschreibung { get; set; }
         public string MerkmalTyp { get; set; }
 
-        public void ErzeugeLogdatei()
+        public void ErzeugeAWLQuellcode()
         {
-            awlQuellcode.AWL();
+            awlQuellcode.AWLStruktur();
 
+            switch (MerkmalTyp)
+            {
+                case "10":
+                    Text10();
+                    break;   
+                
+                default:
+                    Console.WriteLine("Merkmal Typ ist ungültig");
+                    break;
+            }
+
+        }
+
+        private void Text10()
+        {
             string[] ladeKennung = MerkmalKennungLaden(MerkmalKennung);
-            string[] transferiereZiel = Kennung();
+            string[] transferiereZiel = AdresseDBZusammenbauen("kennung");
 
-            string[] lines = {
+            string[] merkmalText10 = {
                 // Header
                 awlQuellcode.FunktionStart,
                 awlQuellcode.Titel,
                 awlQuellcode.Version,
                 awlQuellcode.Begin,
-                // Netzwerk 1
+                // Netzwerk 1 Merkmal nur Netzwerktitel
                 awlQuellcode.Network,
-                awlQuellcode.NetworKTitle,
+                //awlQuellcode.NetworkTitle,
+                awlQuellcode.NetzwerkTitel("### " + Stationbezeichnung + ": Merkmal XXX / Text10 " + MerkmalKennung + " ###"),
+                awlQuellcode.NetzwerkKommentar("hier kann ein Kommentar stehen"),
+
+                // Netzwerk 2 Merkmalskennung
+                awlQuellcode.Network,
+                awlQuellcode.NetzwerkTitel(Stationbezeichnung+ ": Merkmal XXX - Merkmalskennung"),
                 ladeKennung[0], transferiereZiel[1],
                 ladeKennung[1], transferiereZiel[2],
-                /*
                 ladeKennung[2],transferiereZiel[3],
                 ladeKennung[3],transferiereZiel[4],
                 ladeKennung[4],transferiereZiel[5],
@@ -57,36 +77,66 @@ namespace IPM_Erzeugen
                 ladeKennung[15], transferiereZiel[16],
                 ladeKennung[16], transferiereZiel[17],
                 ladeKennung[17], transferiereZiel[18],
-                */
-
-                MerkmalBeschreibung ,
-                // Netzwerk 2
+                
+                // Netzwerk 3 Einheit
                 awlQuellcode.Network,
-                awlQuellcode.NetworKTitle,
-                MerkmalTyp,
+                awlQuellcode.NetzwerkTitel(Stationbezeichnung+ ": Merkmal XXX - Merkmal - Einheit"),
+
+                // Netzwerk 4 Kurfenwert Länge
+                awlQuellcode.Network,
+                awlQuellcode.NetzwerkTitel(Stationbezeichnung+ ": Merkmal XXX - Kurvenwert - Länge"),
+
+                 // Netzwerk 5 Wert
+                awlQuellcode.Network,
+                awlQuellcode.NetzwerkTitel(Stationbezeichnung+ ": Merkmal XXX - Wert"),
+
+                 // Netzwerk 6 Status iO / niO
+                awlQuellcode.Network,
+                awlQuellcode.NetzwerkTitel(Stationbezeichnung+ ": Merkmal XXX - Status ('0 '= iO. '1 '= niO.)"),
+
+                 // Netzwerk 7 Stufe / Stufentyp
+                awlQuellcode.Network,
+                awlQuellcode.NetzwerkTitel(Stationbezeichnung+ ": Merkmal XXX - Stufe / Stufentyp"),
+
+                 // Netzwerk 8 Parameter
+                awlQuellcode.Network,
+                awlQuellcode.NetzwerkTitel(Stationbezeichnung+ ": Merkmal XXX - Parameter"),
+
+                 // Netzwerk 9 Leernetzwerk
+                awlQuellcode.Network,
+                awlQuellcode.NetzwerkTitel("Leernetzwerk zur Orientierung"),
+
                 // Ende
                 awlQuellcode.EndFunction
             };
 
-            System.IO.File.WriteAllLines(@"C:\Users\Public\WriteLines.awl", lines);
+            System.IO.File.WriteAllLines(@"C:\Users\Public\WriteLines.awl", merkmalText10);
         }
-
-
+    
         private string[] MerkmalKennungLaden(string wert)
         {
             string kennung = wert;
-            string[] zerlegen = new string[kennung.Length];
-            for (int i = 0; i < kennung.Length; i++)
+            string[] zerlegen = new string[18];
+
+            for (int i = 0; i < 18; i++)
             {
-                zerlegen[i] = "L '" + kennung[i].ToString() + "';";
+                if (i < kennung.Length)
+                {
+                    zerlegen[i] = "L '" + kennung[i].ToString() + "';";
+                }
+                else
+                {
+                    zerlegen[i] = "L ' ';" ;
+                }
+                
             }
             return zerlegen;
         }
 
-        private string[] Kennung()
+        private string[] AdresseDBZusammenbauen(string wert)
         {
             string[] tmp = new string[19];
-            string wert = ".kennung[";
+            //string wert = ".kennung[";
             
             
             for (int i = 1; i < 19; i++)
@@ -95,7 +145,7 @@ namespace IPM_Erzeugen
                 //         DBnummer + Stationbezeichnung + Merkmalsblock +
                 string kennung = Convert.ToString(i);
 
-                tmp[i] = "T DB"+DBnummer +".daten." + Stationbezeichnung + "." + Merkmalsblock + wert + kennung + "];";
+                tmp[i] = "T DB"+DBnummer +".daten." + Stationbezeichnung + "." + Merkmalsblock + "." + wert + "[" + kennung + "];";
             }
             return tmp;
         }

@@ -18,17 +18,16 @@ namespace IPM_Erzeugen
         public string Version { get; private set; }
         public string Begin { get; private set; }
         public string Network { get; private set; }
-        public string NetworKTitle { get; private set; }
+        public string NetworkTitle { get; private set; }
         public string EndFunction { get; private set; }
         
-        public void AWL()
+        public void AWLStruktur()
         {
             FunktionStart = "FUNCTION" + BenutzerdefinierterTitel( "\"TEST__QUELLE\"" ) + ": VOID";
             Titel = "TITLE ="+ BenutzerdefinierterTitel(" I bin die Quelle aus Visual Studio ");
             Version = "VERSION : 0.1";
             Begin = "BEGIN";
             Network = "NETWORK";
-            NetworKTitle = "TITLE =" + BenutzerdefinierterTitel("Netzwerk1");
             EndFunction = "END_FUNCTION";
                        
         }
@@ -36,6 +35,16 @@ namespace IPM_Erzeugen
         private string BenutzerdefinierterTitel(string text)
         {
             return text;
+        }
+
+        public string NetzwerkTitel(string beschreiben)
+        {
+            return "TITLE =" + beschreiben;
+        }
+
+        public string NetzwerkKommentar(string kommentar)
+        {
+            return "// " + kommentar;
         }
     }
 }

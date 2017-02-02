@@ -1,9 +1,38 @@
 ToDo:
-- AWL Quelle generieren mit den eingegeben Daten
--- Layout erstellen 
--- Werten die Zwischen gespeichert wurden sollen in das Layout eingetragen werden
+- Netzwerktitel 
+-- einzeln beschriften können 
+-- Merkmalnummer Splitten und in Titel einfügen "Merkmal" 1 STK
+
+- Restliche Netzwerke einfügen von Afo´s einfügen
+-- Merkmalskennung
+
+-- Einheit
+--- mit Blanks befüllen
+
+-- Kurvenwert Länge
+--- Erstes Zeichen mit 0
+--- Zweites Zeichen mit Blank
+
+-- Wert
+--- Wert mit Blanks befüllen
+
+-- Status iO / niO
+--- Status mit Blanks befüllen
+
+-- Stufe/Stufentyp
+--- Erstes Zeichen mit 0
+--- Zweites Zeichen mit Blank
+
+-- Anzahl Parameter
+--- Erstes Zeichen mit 0
+--- Zweites Zeichen mit Blank
+
+-- Leernetzwerk
 
 
 
 Erledigt:
 - Eingetragene Werte in Log Datei speichern
+- AWL Quelle generieren mit den eingegeben Daten
+-- Layout erstellen <-
+-- Werten die Zwischen gespeichert wurden sollen in das Layout eingetragen werden
