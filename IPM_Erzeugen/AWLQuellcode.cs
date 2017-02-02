@@ -74,17 +74,39 @@ namespace IPM_Erzeugen
 
         public string[] AdresseDBZusammenbauen(string wert)
         {
-            string[] tmp = new string[19];
-            //string wert = ".kennung[";
+            string[] tmp = new string[255];
 
-
-            for (int i = 1; i < 19; i++)
+            for (int i = 1; i < 255; i++)
             {
-                //"T \"DB_IPM_SEND_BA03\".daten.ST350_1.M1_Daten.kennung[1];";
-                //         DBnummer + Stationbezeichnung + Merkmalsblock +
                 string kennung = Convert.ToString(i);
-
                 tmp[i] = "T DB" + view.DBnummer + ".daten." + view.Stationbezeichnung + "." + view.Merkmalsblock + "." + wert + "[" + kennung + "];";
+            }
+            return tmp;
+        }
+
+        /// <summary>
+        /// tmp[0] gibt " L '0'; " zurück!!! 
+        /// tmp[1] gibt " L ' '; " zurück!!! 
+        /// </summary>
+        /// <returns></returns>
+        public string[] StandartwerteLaden()
+        {
+            // tmp[0] gibt " L '0'; " zurück
+            // 
+
+
+            string[] tmp = new string[2];
+
+            for (int i = 0; i < tmp.Length; i++)
+            {
+                if (i < 1)
+                {
+                    tmp[i] = "L '0'; ";
+                }
+                else
+                {
+                    tmp[i] = "L ' '; ";
+                }
             }
             return tmp;
         }
@@ -96,18 +118,11 @@ namespace IPM_Erzeugen
 
 /*
 NETWORK
-TITLE =ST350: MERKMAL 1 - Merkmalskennung
+TITLE =ST350: MERKMAL 1 - Merkmal - Einheit
 
-      L     'S'; 
-      T     "DB_IPM_SEND_BA03".daten.ST350_1.M1_Daten.kennung[1]; 
-      L     'T'; 
-      T     "DB_IPM_SEND_BA03".daten.ST350_1.M1_Daten.kennung[2]; 
-      L     'K'; 
-      T     "DB_IPM_SEND_BA03".daten.ST350_1.M1_Daten.kennung[3]; 
-      L     'Z'; 
-      T     "DB_IPM_SEND_BA03".daten.ST350_1.M1_Daten.kennung[4]; 
       L     ' '; 
-      T     "DB_IPM_SEND_BA03".daten.ST350_1.M1_Daten.kennung[5]; 
-      L     ' '; 
-      T     "DB_IPM_SEND_BA03".daten.ST350_1.M1_Daten.kennung[6]; 
+      T     "DB_IPM_SEND_BA03".daten.ST350_1.M1_Daten.einheit[1]; 
+      T     "DB_IPM_SEND_BA03".daten.ST350_1.M1_Daten.einheit[2]; 
+      T     "DB_IPM_SEND_BA03".daten.ST350_1.M1_Daten.einheit[3]; 
+
 */

@@ -23,8 +23,6 @@ namespace IPM_Erzeugen
 
         public void ErzeugeAWLQuellcode()
         {
-            
-
             switch (view.MerkmalTyp)
             {
                 case "10":
