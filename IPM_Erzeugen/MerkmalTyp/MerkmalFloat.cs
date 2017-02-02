@@ -130,10 +130,13 @@ namespace IPM_Erzeugen.MerkmalTyp
                 awlQuellcode.NetzwerkTitel("Leernetzwerk zur Orientierung"),
 
                 // Ende
-                awlQuellcode.EndFunction
+                //awlQuellcode.EndFunction
             };
 
             System.IO.File.WriteAllLines(@"C:\Users\Public\MerkmalFloat.awl", merkmalFloat);
+
+            // Funktion AWL Quelle schließen
+            System.IO.File.AppendAllText(@"C:\Users\Public\MerkmalFloat.awl", awlQuellcode.EndFunction);
         }
     }
 }

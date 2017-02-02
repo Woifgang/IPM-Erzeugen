@@ -37,7 +37,6 @@ namespace IPM_Erzeugen
             Begin = "BEGIN";
             Network = "NETWORK";
             EndFunction = "END_FUNCTION";
-                       
         }
 
         public string Variable(string name, string datentyp, string kommentar)

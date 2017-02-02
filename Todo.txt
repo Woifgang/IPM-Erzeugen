@@ -1,7 +1,14 @@
 ToDo:
 Prioriät hoch:
+	- Parameter hinzufügen
+		-- Anzahl der Parameter eingeben und mit einer Schleifen den die Anzahl der Parameter in Code umwandeln.
 
 Prioriät niedrig:
+	- Mehrere Merkmale eingeben können. 
+		-- Wenn Merkmal erzeugt wurde, soll es möglich sein X-belibige Merkmale einzugeben 
+		   und diese in der AWL-Quelle aufreihen. 
+		   ->  mit dieser Codezeile Möglich 
+				System.IO.File.AppendAllText(@"C:\Users\Public\MerkmalFloat.awl", "HABE ich angefügt");
 
 Prioriät niedrig:
 	- Netzwerktitel 
