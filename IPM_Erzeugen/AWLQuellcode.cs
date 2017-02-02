@@ -80,9 +80,9 @@ namespace IPM_Erzeugen
         /// <returns></returns>
         public string[] AdresseDBZusammenbauen(string wert)
         {
-            string[] tmp = new string[255];
+            string[] tmp = new string[256];
 
-            for (int i = 1; i < 255; i++)
+            for (int i = 1; i < 256; i++)
             {
                 string kennung = Convert.ToString(i);
                 tmp[i] = "T DB" + view.DBnummer + ".daten." + view.Stationbezeichnung + "." + view.Merkmalsblock + "." + wert + "[" + kennung + "];";
@@ -97,10 +97,6 @@ namespace IPM_Erzeugen
         /// <returns></returns>
         public string[] StandartwerteLaden()
         {
-            // tmp[0] gibt " L '0'; " zurück
-            // 
-
-
             string[] tmp = new string[2];
 
             for (int i = 0; i < tmp.Length; i++)
@@ -119,16 +115,3 @@ namespace IPM_Erzeugen
 
     }
 }
-
-
-
-/*
-NETWORK
-TITLE =ST350: MERKMAL 1 - Merkmal - Einheit
-
-      L     ' '; 
-      T     "DB_IPM_SEND_BA03".daten.ST350_1.M1_Daten.einheit[1]; 
-      T     "DB_IPM_SEND_BA03".daten.ST350_1.M1_Daten.einheit[2]; 
-      T     "DB_IPM_SEND_BA03".daten.ST350_1.M1_Daten.einheit[3]; 
-
-*/

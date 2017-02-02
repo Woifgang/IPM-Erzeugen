@@ -23,7 +23,7 @@ namespace IPM_Erzeugen
 
         public void HoleBenutzereingabe()
         {
-            MerkmalTyp = BenutzerEingabe("Merkmal Typ (z.B.: 10, 20, F) eintragen: ");
+            MerkmalTyp = BenutzerEingabe("Merkmaltyp eintragen. Für Text -> 10, 20, 50, 100 oder 255; Für Merkmal Float -> F :   ");
             DBnummer = BenutzerEingabe("DB Nummer eintragen: ");
             Stationbezeichnung = BenutzerEingabe("Stationsbezeichnung eintragen: ");
             Merkmalsblock = BenutzerEingabe("Merkmalsblock siehe UDT eintragen: ");
