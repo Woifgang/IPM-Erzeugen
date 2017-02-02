@@ -6,35 +6,36 @@ using System.Threading.Tasks;
 
 namespace IPM_Erzeugen.MerkmalTyp
 {
-    class MerkmalText10
+    class MerkmalFloat
     {
         private AWLQuellcode awlQuellcode;
         private Consoleview view;
- 
 
-        public MerkmalText10(AWLQuellcode awlQuellcode, Consoleview view)
+
+        public MerkmalFloat(AWLQuellcode awlQuellcode, Consoleview view)
         {
             this.awlQuellcode = awlQuellcode;
             this.view = view;
         }
 
-        public void Text10()
+        public void Float()
         {
             awlQuellcode.AWLStruktur();
 
             string[] ladeStandartwert = awlQuellcode.StandartwerteLaden();
             string[] ladeKennung = awlQuellcode.MerkmalDetailsLaden(view.MerkmalKennung);
+            string[] ladeEinheit = awlQuellcode.MerkmalDetailsLaden(view.MerkmalEinheit);
 
             string[] transferiereKennung = awlQuellcode.AdresseDBZusammenbauen("kennung");
             string[] transferiereEinheit = awlQuellcode.AdresseDBZusammenbauen("einheit");
             string[] transferiereKurvenwertLaenge = awlQuellcode.AdresseDBZusammenbauen("kurvenwertLaenge");
-            string[] transferiereWert = awlQuellcode.AdresseDBZusammenbauen("wert");
+            string[] transferiereNumWert = awlQuellcode.AdresseDBZusammenbauen("numWert");
             string[] transferiereStatus = awlQuellcode.AdresseDBZusammenbauen("status");
             string[] transferiereStufe = awlQuellcode.AdresseDBZusammenbauen("stufe");
             string[] transferiereStufentyp = awlQuellcode.AdresseDBZusammenbauen("stufentyp");
             string[] transferiereAnzahlParameter = awlQuellcode.AdresseDBZusammenbauen("anzahlParameter");
 
-            string[] merkmalText10 = {
+            string[] merkmalFloat = {
                 // Header
                 awlQuellcode.FunktionStart,
                 awlQuellcode.Titel,
@@ -43,7 +44,7 @@ namespace IPM_Erzeugen.MerkmalTyp
                 // Netzwerk 1 Merkmal nur Netzwerktitel
                 awlQuellcode.Network,
                 //awlQuellcode.NetworkTitle,
-                awlQuellcode.NetzwerkTitel("### " + view.Stationbezeichnung + ": Merkmal XXX / Text10 " + view.MerkmalKennung + " ###"),
+                awlQuellcode.NetzwerkTitel("### " + view.Stationbezeichnung + ": Merkmal XXX / FLOAT " + view.MerkmalKennung + " ###"),
                 awlQuellcode.NetzwerkKommentar(view.MerkmalBeschreibung),
 
                 // Netzwerk 2 Merkmalskennung
@@ -71,16 +72,16 @@ namespace IPM_Erzeugen.MerkmalTyp
                 // Netzwerk 3 Einheit
                 awlQuellcode.Network,
                 awlQuellcode.NetzwerkTitel(view.Stationbezeichnung+ ": Merkmal XXX - Merkmal - Einheit"),
-                ladeStandartwert[1], transferiereEinheit[1],
-                ladeStandartwert[1], transferiereEinheit[2],
-                ladeStandartwert[1], transferiereEinheit[3],
-                ladeStandartwert[1], transferiereEinheit[4],
-                ladeStandartwert[1], transferiereEinheit[5],
-                ladeStandartwert[1], transferiereEinheit[6],
-                ladeStandartwert[1], transferiereEinheit[7],
-                ladeStandartwert[1], transferiereEinheit[8],
-                ladeStandartwert[1], transferiereEinheit[9],
-                ladeStandartwert[1], transferiereEinheit[10],
+                ladeEinheit[0], transferiereEinheit[1],
+                ladeEinheit[1], transferiereEinheit[2],
+                ladeEinheit[2], transferiereEinheit[3],
+                ladeEinheit[3], transferiereEinheit[4],
+                ladeEinheit[4], transferiereEinheit[5],
+                ladeEinheit[5], transferiereEinheit[6],
+                ladeEinheit[6], transferiereEinheit[7],
+                ladeEinheit[7], transferiereEinheit[8],
+                ladeEinheit[8], transferiereEinheit[9],
+                ladeEinheit[9], transferiereEinheit[10],
 
                 // Netzwerk 4 Kurfenwert Länge
                 awlQuellcode.Network,
@@ -88,19 +89,18 @@ namespace IPM_Erzeugen.MerkmalTyp
                 ladeStandartwert[0],transferiereKurvenwertLaenge[1],
                 ladeStandartwert[1],transferiereKurvenwertLaenge[2],
 
-                 // Netzwerk 5 Wert
+                 // Netzwerk 5 numWert
                 awlQuellcode.Network,
                 awlQuellcode.NetzwerkTitel(view.Stationbezeichnung+ ": Merkmal XXX - Wert"),
-                ladeStandartwert[1], transferiereWert[1],
-                ladeStandartwert[1], transferiereWert[2],
-                ladeStandartwert[1], transferiereWert[3],
-                ladeStandartwert[1], transferiereWert[4],
-                ladeStandartwert[1], transferiereWert[5],
-                ladeStandartwert[1], transferiereWert[6],
-                ladeStandartwert[1], transferiereWert[7],
-                ladeStandartwert[1], transferiereWert[8],
-                ladeStandartwert[1], transferiereWert[9],
-                ladeStandartwert[1], transferiereWert[10],
+                ladeStandartwert[1], transferiereNumWert[1],
+                ladeStandartwert[1], transferiereNumWert[2],
+                ladeStandartwert[1], transferiereNumWert[3],
+                ladeStandartwert[1], transferiereNumWert[4],
+                ladeStandartwert[1], transferiereNumWert[5],
+                ladeStandartwert[1], transferiereNumWert[6],
+                ladeStandartwert[1], transferiereNumWert[7],
+                ladeStandartwert[1], transferiereNumWert[8],
+
 
                  // Netzwerk 6 Status iO / niO
                 awlQuellcode.Network,
@@ -133,8 +133,7 @@ namespace IPM_Erzeugen.MerkmalTyp
                 awlQuellcode.EndFunction
             };
 
-            System.IO.File.WriteAllLines(@"C:\Users\Public\MerkmalText10.awl", merkmalText10);
+            System.IO.File.WriteAllLines(@"C:\Users\Public\MerkmalFloat.awl", merkmalFloat);
         }
-
     }
 }

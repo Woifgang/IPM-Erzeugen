@@ -13,38 +13,42 @@ Prioriät niedrig:
 
 
 Erledigt:
-- Merkmale in eigene Klassen auslagern
-- Netzwerktitel 
--- einzeln beschriften können 
+	- Merkmal Float
+		-- Einheit Abfragen
+		-- Abfrage welches Merkmal erzeugt werden soll nach oben
 
-- Eingetragene Werte in Log Datei speichern
-- AWL Quelle generieren mit den eingegeben Daten
--- Layout erstellen <-
--- Werten die Zwischen gespeichert wurden sollen in das Layout eingetragen werden
+	- Merkmale in eigene Klassen auslagern
+	- Netzwerktitel 
+		-- einzeln beschriften können 
 
-- Merkmal 10
-- Restliche Netzwerke einfügen von Afo´s einfügen
--- Merkmalskennung
+	- Eingetragene Werte in Log Datei speichern
+	- AWL Quelle generieren mit den eingegeben Daten
+		-- Layout erstellen <-
+		-- Werten die Zwischen gespeichert wurden sollen in das Layout eingetragen werden
 
--- Einheit
---- mit Blanks befüllen
+	- Merkmal 10
+		- Restliche Netzwerke einfügen von Afo´s einfügen
+			-- Merkmalskennung
 
--- Kurvenwert Länge
---- Erstes Zeichen mit 0
---- Zweites Zeichen mit Blank
+			-- Einheit
+			--- mit Blanks befüllen
 
--- Wert
---- Wert mit Blanks befüllen
+			-- Kurvenwert Länge
+			--- Erstes Zeichen mit 0
+			--- Zweites Zeichen mit Blank
 
--- Status iO / niO
---- Status mit Blanks befüllen
+			-- Wert
+			--- Wert mit Blanks befüllen
 
--- Stufe/Stufentyp
---- Erstes Zeichen mit 0
---- Zweites Zeichen mit Blank
+			-- Status iO / niO
+			--- Status mit Blanks befüllen
 
--- Anzahl Parameter
---- Erstes Zeichen mit 0
---- Zweites Zeichen mit Blank
+			-- Stufe/Stufentyp
+			--- Erstes Zeichen mit 0
+			--- Zweites Zeichen mit Blank
 
--- Leernetzwerk
+			-- Anzahl Parameter
+			--- Erstes Zeichen mit 0
+			--- Zweites Zeichen mit Blank
+
+			-- Leernetzwerk

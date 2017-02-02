@@ -46,6 +46,7 @@
     <Compile Include="Anwendungscontroler.cs" />
     <Compile Include="AWLQuellcode.cs" />
     <Compile Include="Consoleview.cs" />
+    <Compile Include="MerkmalTyp\MerkmalFloat.cs" />
     <Compile Include="MerkmalTyp\MerkmalText10.cs" />
     <Compile Include="MerkmalTyp\MerkmalText20.cs" />
     <Compile Include="Program.cs" />

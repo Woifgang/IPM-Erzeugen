@@ -13,13 +13,15 @@ namespace IPM_Erzeugen
         private AWLQuellcode awlQuellcode;
         private MerkmalTyp.MerkmalText10 merkmalText10;
         private MerkmalTyp.MerkmalText20 merkmalText20;
+        private MerkmalTyp.MerkmalFloat merkmalFloat;
 
-        public QuelleErstellen(Consoleview view, AWLQuellcode awlQuellcode, MerkmalTyp.MerkmalText10 merkmalText10, MerkmalTyp.MerkmalText20 merkmalText20)
+        public QuelleErstellen(Consoleview view, AWLQuellcode awlQuellcode, MerkmalTyp.MerkmalText10 merkmalText10, MerkmalTyp.MerkmalText20 merkmalText20, MerkmalTyp.MerkmalFloat merkmalFloat)
         {
             this.view = view;
             this.awlQuellcode = awlQuellcode;
             this.merkmalText10 = merkmalText10;
             this.merkmalText20 = merkmalText20;
+            this.merkmalFloat = merkmalFloat;
         }
 
         public void ErzeugeAWLQuellcode()
@@ -34,6 +36,11 @@ namespace IPM_Erzeugen
                 case "20":
                     merkmalText20.Text20();
                     view.AWLQuelleGeneriert("TEXT 20");
+                    break;
+
+                case "F":
+                    merkmalFloat.Float();
+                    view.AWLQuelleGeneriert("FLOAT");
                     break;
 
                 default:

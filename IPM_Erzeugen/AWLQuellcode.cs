@@ -52,7 +52,7 @@ namespace IPM_Erzeugen
         }
 
 
-        public string[] MerkmalKennungLaden(string wert)
+        public string[] MerkmalDetailsLaden(string wert)
         {
             string kennung = wert;
             string[] zerlegen = new string[18];
