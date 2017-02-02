@@ -1,9 +1,28 @@
 ToDo:
+Prioriät hoch:
+
+Prioriät niedrig:
+
+Prioriät niedrig:
+	- Netzwerktitel 
+		-- Merkmalnummer Splitten und in Titel einfügen "Merkmal" 1 STK
+			-- Nur möglich wenn immer der Gleiche Buchstabe vorne dran is 
 
 
+
+
+
+Erledigt:
+- Merkmale in eigene Klassen auslagern
 - Netzwerktitel 
--- Merkmalnummer Splitten und in Titel einfügen "Merkmal" 1 STK
+-- einzeln beschriften können 
 
+- Eingetragene Werte in Log Datei speichern
+- AWL Quelle generieren mit den eingegeben Daten
+-- Layout erstellen <-
+-- Werten die Zwischen gespeichert wurden sollen in das Layout eingetragen werden
+
+- Merkmal 10
 - Restliche Netzwerke einfügen von Afo´s einfügen
 -- Merkmalskennung
 
@@ -29,15 +48,3 @@ ToDo:
 --- Zweites Zeichen mit Blank
 
 -- Leernetzwerk
-
-
-
-Erledigt:
-- Merkmale in eigene Klassen auslagern
-- Netzwerktitel 
--- einzeln beschriften können 
-
-- Eingetragene Werte in Log Datei speichern
-- AWL Quelle generieren mit den eingegeben Daten
--- Layout erstellen <-
--- Werten die Zwischen gespeichert wurden sollen in das Layout eingetragen werden

@@ -38,6 +38,11 @@ namespace IPM_Erzeugen
             return Console.ReadLine();
         }
 
+        public void AWLQuelleGeneriert(string merkmaltyp)
+        {
+            Console.WriteLine("AWL-Quelle des Merkmalstyp \"" + merkmaltyp + "\" erfolgreich erstellt. ");
+        }
+
         private string BenutzerEingabe(string eingabe)
         {
             Console.Write(eingabe);

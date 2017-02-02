@@ -72,6 +72,12 @@ namespace IPM_Erzeugen
             return zerlegen;
         }
 
+
+        /// <summary>
+        /// Gibt z.B. "  T "DB_IPM_SEND_BA03".daten.ST350_1.M1_Daten.kennung[1]   " zurück abhängig vom eingetragen Wert
+        /// </summary>
+        /// <param name="wert"></param>
+        /// <returns></returns>
         public string[] AdresseDBZusammenbauen(string wert)
         {
             string[] tmp = new string[255];

@@ -27,6 +27,7 @@ namespace IPM_Erzeugen
             {
                 case "10":
                     merkmalText10.Text10();
+                    view.AWLQuelleGeneriert("TEXT 10");
                     break;   
                 
                 default:
