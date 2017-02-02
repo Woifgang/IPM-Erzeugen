@@ -1,6 +1,7 @@
 ToDo:
+
+
 - Netzwerktitel 
--- einzeln beschriften können 
 -- Merkmalnummer Splitten und in Titel einfügen "Merkmal" 1 STK
 
 - Restliche Netzwerke einfügen von Afo´s einfügen
@@ -32,6 +33,10 @@ ToDo:
 
 
 Erledigt:
+- Merkmale in eigene Klassen auslagern
+- Netzwerktitel 
+-- einzeln beschriften können 
+
 - Eingetragene Werte in Log Datei speichern
 - AWL Quelle generieren mit den eingegeben Daten
 -- Layout erstellen <-

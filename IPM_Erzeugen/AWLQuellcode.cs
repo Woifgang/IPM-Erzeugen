@@ -13,6 +13,15 @@ namespace IPM_Erzeugen
 
         }
 
+
+        public string DBnummer { get; set; }
+        public string Stationbezeichnung { get; set; }
+        public string Merkmalsblock { get; set; }
+        public string MerkmalKennung { get; set; }
+        public string MerkmalBeschreibung { get; set; }
+        public string MerkmalTyp { get; set; }
+
+
         public string FunktionStart { get; private  set; }
         public string Titel { get; private set; }
         public string Version { get; private set; }
@@ -20,6 +29,8 @@ namespace IPM_Erzeugen
         public string Network { get; private set; }
         public string NetworkTitle { get; private set; }
         public string EndFunction { get; private set; }
+
+
         
         public void AWLStruktur()
         {
@@ -46,6 +57,45 @@ namespace IPM_Erzeugen
         {
             return "// " + kommentar;
         }
+
+
+        public string[] MerkmalKennungLaden(string wert)
+        {
+            string kennung = wert;
+            string[] zerlegen = new string[18];
+
+            for (int i = 0; i < 18; i++)
+            {
+                if (i < kennung.Length)
+                {
+                    zerlegen[i] = "L '" + kennung[i].ToString() + "';";
+                }
+                else
+                {
+                    zerlegen[i] = "L ' ';";
+                }
+
+            }
+            return zerlegen;
+        }
+
+        public string[] AdresseDBZusammenbauen(string wert)
+        {
+            string[] tmp = new string[19];
+            //string wert = ".kennung[";
+
+
+            for (int i = 1; i < 19; i++)
+            {
+                //"T \"DB_IPM_SEND_BA03\".daten.ST350_1.M1_Daten.kennung[1];";
+                //         DBnummer + Stationbezeichnung + Merkmalsblock +
+                string kennung = Convert.ToString(i);
+
+                tmp[i] = "T DB" + DBnummer + ".daten." + Stationbezeichnung + "." + Merkmalsblock + "." + wert + "[" + kennung + "];";
+            }
+            return tmp;
+        }
+
     }
 }
 

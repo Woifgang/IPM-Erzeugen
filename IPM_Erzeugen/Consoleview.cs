@@ -9,21 +9,21 @@ namespace IPM_Erzeugen
     class Consoleview
     {
 
-        private QuelleErstellen quelleErstellen;
+        private AWLQuellcode awlQuellcode;
 
-        public Consoleview(QuelleErstellen quelleErstellen)
+        public Consoleview(AWLQuellcode awlQuellcode)
         {
-            this.quelleErstellen = quelleErstellen;
+            this.awlQuellcode = awlQuellcode;
         }
 
         public void HoleBenutzereingabe()
         {
-            quelleErstellen.DBnummer = BenutzerEingabe("DB Nummer eintragen: ");
-            quelleErstellen.Stationbezeichnung = BenutzerEingabe("Stationsbezeichnung eintragen: ");
-            quelleErstellen.Merkmalsblock = BenutzerEingabe("Merkmalsblock siehe UDT eintragen: ");
-            quelleErstellen.MerkmalKennung = BenutzerEingabe("Merkmalkennung eintragen: ");
-            quelleErstellen.MerkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");
-            quelleErstellen.MerkmalTyp = BenutzerEingabe("Merkmal Typ (z.B.: 10, 20, F) eintragen: ");
+            awlQuellcode.DBnummer = BenutzerEingabe("DB Nummer eintragen: ");
+            awlQuellcode.Stationbezeichnung = BenutzerEingabe("Stationsbezeichnung eintragen: ");
+            awlQuellcode.Merkmalsblock = BenutzerEingabe("Merkmalsblock siehe UDT eintragen: ");
+            awlQuellcode.MerkmalKennung = BenutzerEingabe("Merkmalkennung eintragen: ");
+            awlQuellcode.MerkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");
+            awlQuellcode.MerkmalTyp = BenutzerEingabe("Merkmal Typ (z.B.: 10, 20, F) eintragen: ");
         }
 
         public string BeendeProgramm()

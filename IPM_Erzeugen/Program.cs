@@ -10,9 +10,10 @@ namespace IPM_Erzeugen
     {
         static void Main(string[] args)
         {
-            AWLQuellcode awlQuellecode = new AWLQuellcode();
-            QuelleErstellen quelleErstellen = new QuelleErstellen(awlQuellecode);
-            Consoleview view = new Consoleview(quelleErstellen);
+            AWLQuellcode awlQuellcode = new AWLQuellcode();
+            MerkmalTyp.MerkmalText10 merkmalText10 = new MerkmalTyp.MerkmalText10(awlQuellcode);
+            QuelleErstellen quelleErstellen = new QuelleErstellen(merkmalText10,awlQuellcode );
+            Consoleview view = new Consoleview(awlQuellcode);
             Anwendungscontroler controler = new Anwendungscontroler(view, quelleErstellen );
 
             controler.AnzeigeConsole();
