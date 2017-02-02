@@ -33,12 +33,42 @@ namespace IPM_Erzeugen.MerkmalTyp
             string[] transferiereStufe = awlQuellcode.AdresseDBZusammenbauen("stufe");
             string[] transferiereStufentyp = awlQuellcode.AdresseDBZusammenbauen("stufentyp");
             string[] transferiereAnzahlParameter = awlQuellcode.AdresseDBZusammenbauen("anzahlParameter");
-
+            /*
+VAR_TEMP
+_retval : INT ;	
+_Leerzeichen : CHAR ;	
+_Unterstrich : CHAR ;	
+_frg_spool : BOOL ;	//Befüllfreigabe Spooler
+_VKE_HM : BOOL ;	//VKE Übertrag
+t_WIO : BOOL ;	//HM Werker-IO
+t_WNIO : BOOL ;	//HM Werker-NIO
+t_ABGW : BOOL ;	//HM abgwählt
+t_NG : BOOL ;	//HM nicht getätigt
+t_ZIO : BOOL ;	//HM nach 2. mal IO
+t_RIO : BOOL ;	//HM nach Rep IO
+t_ok : BOOL ;	//HM Status OK
+t_done : BOOL ;	//HM Status DONE
+t_Baugroesse : WORD ;	//Baugröße (Struct-Word)	
+t_HW_R : REAL ;	//Hilfswert Real
+END_VAR
+*/
             string[] merkmalText10 = {
                 // Header
                 awlQuellcode.FunktionStart,
                 awlQuellcode.Titel,
                 awlQuellcode.Version,
+                // Variablen
+                awlQuellcode.VarTempStart,
+                awlQuellcode.Variable("_retval", "int", ""),
+                awlQuellcode.Variable("t_WIO", "BOOL", "HM Werker-IO"),
+                awlQuellcode.Variable("t_WNIO", "BOOL", "HM Werker-NIO"),
+                awlQuellcode.Variable("t_ABGW", "BOOL", "HM abgewählt"),
+                awlQuellcode.Variable("t_NG", "BOOL", "HM nicht getätigt"),
+                awlQuellcode.Variable("t_ZIO", "BOOL", "HM nach 2. mal IO"),
+                awlQuellcode.Variable("t_RIO", "BOOL", "HM nach Rep IO"),
+                awlQuellcode.Variable("t_ok", "BOOL", "HM Status OK"),
+                awlQuellcode.Variable("t_HW_R", "REAL", "Hilfswert Real"),
+                awlQuellcode.VarTempEnd,
                 awlQuellcode.Begin,
                 // Netzwerk 1 Merkmal nur Netzwerktitel
                 awlQuellcode.Network,

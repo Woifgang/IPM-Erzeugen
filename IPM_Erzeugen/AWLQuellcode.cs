@@ -18,6 +18,8 @@ namespace IPM_Erzeugen
         public string FunktionStart { get; private  set; }
         public string Titel { get; private set; }
         public string Version { get; private set; }
+        public string VarTempStart { get; private set; }
+        public string VarTempEnd { get; private set; }
         public string Begin { get; private set; }
         public string Network { get; private set; }
         public string NetworkTitle { get; private set; }
@@ -30,10 +32,17 @@ namespace IPM_Erzeugen
             FunktionStart = "FUNCTION" + BenutzerdefinierterTitel( "\"TEST__QUELLE\"" ) + ": VOID";
             Titel = "TITLE ="+ BenutzerdefinierterTitel(" I bin die Quelle aus Visual Studio ");
             Version = "VERSION : 0.1";
+            VarTempStart = "VAR_TEMP";
+            VarTempEnd = "END_VAR";
             Begin = "BEGIN";
             Network = "NETWORK";
             EndFunction = "END_FUNCTION";
                        
+        }
+
+        public string Variable(string name, string datentyp, string kommentar)
+        {
+            return name + " : " + datentyp + " ; " + " // " + kommentar;
         }
 
         private string BenutzerdefinierterTitel(string text)

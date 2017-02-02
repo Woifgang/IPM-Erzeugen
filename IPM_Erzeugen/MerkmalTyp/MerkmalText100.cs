@@ -39,6 +39,18 @@ namespace IPM_Erzeugen.MerkmalTyp
                 awlQuellcode.FunktionStart,
                 awlQuellcode.Titel,
                 awlQuellcode.Version,
+                // Variablen
+                awlQuellcode.VarTempStart,
+                awlQuellcode.Variable("_retval", "int", ""),
+                awlQuellcode.Variable("t_WIO", "BOOL", "HM Werker-IO"),
+                awlQuellcode.Variable("t_WNIO", "BOOL", "HM Werker-NIO"),
+                awlQuellcode.Variable("t_ABGW", "BOOL", "HM abgewählt"),
+                awlQuellcode.Variable("t_NG", "BOOL", "HM nicht getätigt"),
+                awlQuellcode.Variable("t_ZIO", "BOOL", "HM nach 2. mal IO"),
+                awlQuellcode.Variable("t_RIO", "BOOL", "HM nach Rep IO"),
+                awlQuellcode.Variable("t_ok", "BOOL", "HM Status OK"),
+                awlQuellcode.Variable("t_HW_R", "REAL", "Hilfswert Real"),
+                awlQuellcode.VarTempEnd,
                 awlQuellcode.Begin,
                 // Netzwerk 1 Merkmal nur Netzwerktitel
                 awlQuellcode.Network,
