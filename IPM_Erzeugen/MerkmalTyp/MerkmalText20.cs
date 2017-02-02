@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace IPM_Erzeugen.MerkmalTyp
 {
-    class MerkmalText10
+    class MerkmalText20
     {
         private AWLQuellcode awlQuellcode;
         private Consoleview view;
- 
 
-        public MerkmalText10(AWLQuellcode awlQuellcode, Consoleview view)
+
+        public MerkmalText20(AWLQuellcode awlQuellcode, Consoleview view)
         {
             this.awlQuellcode = awlQuellcode;
             this.view = view;
         }
 
-        public void Text10()
+        public void Text20()
         {
             awlQuellcode.AWLStruktur();
 
@@ -34,7 +34,7 @@ namespace IPM_Erzeugen.MerkmalTyp
             string[] transferiereStufentyp = awlQuellcode.AdresseDBZusammenbauen("stufentyp");
             string[] transferiereAnzahlParameter = awlQuellcode.AdresseDBZusammenbauen("anzahlParameter");
 
-            string[] merkmalText10 = {
+            string[] merkmalText20 = {
                 // Header
                 awlQuellcode.FunktionStart,
                 awlQuellcode.Titel,
@@ -43,7 +43,7 @@ namespace IPM_Erzeugen.MerkmalTyp
                 // Netzwerk 1 Merkmal nur Netzwerktitel
                 awlQuellcode.Network,
                 //awlQuellcode.NetworkTitle,
-                awlQuellcode.NetzwerkTitel("### " + view.Stationbezeichnung + ": Merkmal XXX / Text10 " + view.MerkmalKennung + " ###"),
+                awlQuellcode.NetzwerkTitel("### " + view.Stationbezeichnung + ": Merkmal XXX / Text20 " + view.MerkmalKennung + " ###"),
                 awlQuellcode.NetzwerkKommentar(view.MerkmalBeschreibung),
 
                 // Netzwerk 2 Merkmalskennung
@@ -101,6 +101,16 @@ namespace IPM_Erzeugen.MerkmalTyp
                 ladeStandartwert[1],transferiereWert[8],
                 ladeStandartwert[1],transferiereWert[9],
                 ladeStandartwert[1],transferiereWert[10],
+                ladeStandartwert[1],transferiereWert[11],
+                ladeStandartwert[1],transferiereWert[12],
+                ladeStandartwert[1],transferiereWert[13],
+                ladeStandartwert[1],transferiereWert[14],
+                ladeStandartwert[1],transferiereWert[15],
+                ladeStandartwert[1],transferiereWert[16],
+                ladeStandartwert[1],transferiereWert[17],
+                ladeStandartwert[1],transferiereWert[18],
+                ladeStandartwert[1],transferiereWert[19],
+                ladeStandartwert[1],transferiereWert[20],
 
                  // Netzwerk 6 Status iO / niO
                 awlQuellcode.Network,
@@ -133,8 +143,7 @@ namespace IPM_Erzeugen.MerkmalTyp
                 awlQuellcode.EndFunction
             };
 
-            System.IO.File.WriteAllLines(@"C:\Users\Public\MerkmalText10.awl", merkmalText10);
+            System.IO.File.WriteAllLines(@"C:\Users\Public\MerkmalText20.awl", merkmalText20);
         }
-
     }
 }
