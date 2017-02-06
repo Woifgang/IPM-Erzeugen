@@ -20,10 +20,16 @@ namespace IPM_Erzeugen
         public string MerkmalBeschreibung { get; set; }
         public string MerkmalTyp { get; set; }
         public string MerkmalEinheit { get; set; }
+        public string Zeitstempel { get; set; }
+
 
         public void HoleBenutzereingabe()
         {
-            MerkmalTyp = BenutzerEingabe("Merkmaltyp eintragen. Für Text -> 10, 20, 50, 100 oder 255; Für Merkmal Float -> F :   ");
+
+            Zeitstempel = AktuelleUhrzeit();
+            Console.WriteLine("Merkmaltyp eintragen.");
+            Console.WriteLine("Für Text -> 10, 20, 50, 100 oder 255");
+            MerkmalTyp = BenutzerEingabe("Für Merkmal Float -> F :   ");
             DBnummer = BenutzerEingabe("DB Nummer eintragen: ");
             Stationbezeichnung = BenutzerEingabe("Stationsbezeichnung eintragen: ");
             Merkmalsblock = BenutzerEingabe("Merkmalsblock siehe UDT eintragen: ");
@@ -33,6 +39,8 @@ namespace IPM_Erzeugen
                 MerkmalEinheit = BenutzerEingabe("Merkmal Einheit angeben: ");
             }
             MerkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");
+
+            
         }
 
         public string BeendeProgramm()
@@ -52,7 +60,11 @@ namespace IPM_Erzeugen
             return Console.ReadLine();
         }
 
-       
+       private string AktuelleUhrzeit()
+        {
+            string zeitstempel = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+            return zeitstempel;
+        }
 
     }
 }

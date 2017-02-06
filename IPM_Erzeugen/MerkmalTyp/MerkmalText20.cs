@@ -18,6 +18,8 @@ namespace IPM_Erzeugen.MerkmalTyp
             this.view = view;
         }
 
+        public string DateiName { get; set; }
+
         public void Text20()
         {
             awlQuellcode.AWLStruktur();
@@ -152,10 +154,12 @@ namespace IPM_Erzeugen.MerkmalTyp
                 awlQuellcode.NetzwerkTitel("Leernetzwerk zur Orientierung"),
 
                 // Ende
-                awlQuellcode.EndFunction
+                //awlQuellcode.EndFunction
             };
 
-            System.IO.File.WriteAllLines(@"C:\Users\Public\MerkmalText20.awl", merkmalText20);
+            System.IO.File.WriteAllLines(DateiName , merkmalText20);
+            // Funktion AWL Quelle schließen
+            System.IO.File.AppendAllText(DateiName, awlQuellcode.EndFunction);
         }
     }
 }

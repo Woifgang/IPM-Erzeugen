@@ -18,6 +18,8 @@ namespace IPM_Erzeugen.MerkmalTyp
             this.view = view;
         }
 
+        public string DateiName { get; set; }
+
         public void Text10()
         {
             awlQuellcode.AWLStruktur();
@@ -33,25 +35,7 @@ namespace IPM_Erzeugen.MerkmalTyp
             string[] transferiereStufe = awlQuellcode.AdresseDBZusammenbauen("stufe");
             string[] transferiereStufentyp = awlQuellcode.AdresseDBZusammenbauen("stufentyp");
             string[] transferiereAnzahlParameter = awlQuellcode.AdresseDBZusammenbauen("anzahlParameter");
-            /*
-VAR_TEMP
-_retval : INT ;	
-_Leerzeichen : CHAR ;	
-_Unterstrich : CHAR ;	
-_frg_spool : BOOL ;	//Befüllfreigabe Spooler
-_VKE_HM : BOOL ;	//VKE Übertrag
-t_WIO : BOOL ;	//HM Werker-IO
-t_WNIO : BOOL ;	//HM Werker-NIO
-t_ABGW : BOOL ;	//HM abgwählt
-t_NG : BOOL ;	//HM nicht getätigt
-t_ZIO : BOOL ;	//HM nach 2. mal IO
-t_RIO : BOOL ;	//HM nach Rep IO
-t_ok : BOOL ;	//HM Status OK
-t_done : BOOL ;	//HM Status DONE
-t_Baugroesse : WORD ;	//Baugröße (Struct-Word)	
-t_HW_R : REAL ;	//Hilfswert Real
-END_VAR
-*/
+            
             string[] merkmalText10 = {
                 // Header
                 awlQuellcode.FunktionStart,
@@ -160,10 +144,13 @@ END_VAR
                 awlQuellcode.NetzwerkTitel("Leernetzwerk zur Orientierung"),
 
                 // Ende
-                awlQuellcode.EndFunction
+                //awlQuellcode.EndFunction
             };
 
-            System.IO.File.WriteAllLines(@"C:\Users\Public\MerkmalText10.awl", merkmalText10);
+            System.IO.File.WriteAllLines(DateiName, merkmalText10);
+
+            // Funktion AWL Quelle schließen
+            System.IO.File.AppendAllText(DateiName, awlQuellcode.EndFunction);
         }
 
     }

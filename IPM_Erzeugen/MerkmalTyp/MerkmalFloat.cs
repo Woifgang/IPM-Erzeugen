@@ -18,6 +18,8 @@ namespace IPM_Erzeugen.MerkmalTyp
             this.view = view;
         }
 
+        public string DateiName { get; set; }
+
         public void Float()
         {
             awlQuellcode.AWLStruktur();
@@ -133,10 +135,10 @@ namespace IPM_Erzeugen.MerkmalTyp
                 //awlQuellcode.EndFunction
             };
 
-            System.IO.File.WriteAllLines(@"C:\Users\Public\MerkmalFloat.awl", merkmalFloat);
+            System.IO.File.WriteAllLines(DateiName, merkmalFloat);
 
             // Funktion AWL Quelle schließen
-            System.IO.File.AppendAllText(@"C:\Users\Public\MerkmalFloat.awl", awlQuellcode.EndFunction);
+             System.IO.File.AppendAllText(DateiName, awlQuellcode.EndFunction);
         }
     }
 }

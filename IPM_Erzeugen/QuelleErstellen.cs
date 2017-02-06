@@ -44,33 +44,40 @@ namespace IPM_Erzeugen
             switch (view.MerkmalTyp)
             {
                 case "10":
+                    merkmalText10.DateiName = @"C:\Users\Public\MerkmalText10_" + view.Zeitstempel + ".awl";
                     merkmalText10.Text10();
                     view.AWLQuelleGeneriert("TEXT 10");
                     break;
 
                 case "20":
+                    merkmalText20.DateiName = @"C:\Users\Public\MerkmalText20_" + view.Zeitstempel + ".awl";
                     merkmalText20.Text20();
                     view.AWLQuelleGeneriert("TEXT 20");
                     break;
 
                 case "50":
+                    merkmalText50.DateiName = @"C:\Users\Public\MerkmalText50_" + view.Zeitstempel + ".awl";
                     merkmalText50.Text50();
                     view.AWLQuelleGeneriert("TEXT 50");
                     break;
 
                 case "100":
+                    merkmalText100.DateiName = @"C:\Users\Public\MerkmalText100_" + view.Zeitstempel + ".awl";
                     merkmalText100.Text100();
                     view.AWLQuelleGeneriert("TEXT 100");
                     break;
 
                 case "255":
+                    merkmalText255.DateiName = @"C:\Users\Public\MerkmalText255_" + view.Zeitstempel + ".awl";
                     merkmalText255.Text255();
                     view.AWLQuelleGeneriert("TEXT 255");
                     break;
 
                 case "F":
+                    merkmalFloat.DateiName = @"C:\Users\Public\MerkmalFloat_" + view.Zeitstempel + ".awl";
                     merkmalFloat.Float();
                     view.AWLQuelleGeneriert("FLOAT");
+                    
                     break;
 
                 default:
