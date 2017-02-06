@@ -18,7 +18,7 @@ namespace IPM_Erzeugen.MerkmalTyp
             this.view = view;
         }
 
-        public string DateiName { get; set; }
+        public string[] MerkmalTEXT10 { get; set; }
 
         public void Text10()
         {
@@ -35,25 +35,9 @@ namespace IPM_Erzeugen.MerkmalTyp
             string[] transferiereStufe = awlQuellcode.AdresseDBZusammenbauen("stufe");
             string[] transferiereStufentyp = awlQuellcode.AdresseDBZusammenbauen("stufentyp");
             string[] transferiereAnzahlParameter = awlQuellcode.AdresseDBZusammenbauen("anzahlParameter");
-            
-            string[] merkmalText10 = {
-                // Header
-                awlQuellcode.FunktionStart,
-                awlQuellcode.Titel,
-                awlQuellcode.Version,
-                // Variablen
-                awlQuellcode.VarTempStart,
-                awlQuellcode.Variable("_retval", "int", ""),
-                awlQuellcode.Variable("t_WIO", "BOOL", "HM Werker-IO"),
-                awlQuellcode.Variable("t_WNIO", "BOOL", "HM Werker-NIO"),
-                awlQuellcode.Variable("t_ABGW", "BOOL", "HM abgewählt"),
-                awlQuellcode.Variable("t_NG", "BOOL", "HM nicht getätigt"),
-                awlQuellcode.Variable("t_ZIO", "BOOL", "HM nach 2. mal IO"),
-                awlQuellcode.Variable("t_RIO", "BOOL", "HM nach Rep IO"),
-                awlQuellcode.Variable("t_ok", "BOOL", "HM Status OK"),
-                awlQuellcode.Variable("t_HW_R", "REAL", "Hilfswert Real"),
-                awlQuellcode.VarTempEnd,
-                awlQuellcode.Begin,
+
+           string[] merkmalText10 = {
+               
                 // Netzwerk 1 Merkmal nur Netzwerktitel
                 awlQuellcode.Network,
                 //awlQuellcode.NetworkTitle,
@@ -142,15 +126,11 @@ namespace IPM_Erzeugen.MerkmalTyp
                  // Netzwerk 9 Leernetzwerk
                 awlQuellcode.Network,
                 awlQuellcode.NetzwerkTitel("Leernetzwerk zur Orientierung"),
-
-                // Ende
-                //awlQuellcode.EndFunction
+                
             };
 
-            System.IO.File.WriteAllLines(DateiName, merkmalText10);
-
-            // Funktion AWL Quelle schließen
-            System.IO.File.AppendAllText(DateiName, awlQuellcode.EndFunction);
+            MerkmalTEXT10 = merkmalText10;
+            
         }
 
     }

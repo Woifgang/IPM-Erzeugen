@@ -41,41 +41,42 @@ namespace IPM_Erzeugen
 
         public void ErzeugeAWLQuellcode()
         {
+            string dateiName = @"C:\Users\Public\Merkmal_" + view.Zeitstempel + ".awl";
             switch (view.MerkmalTyp)
             {
                 case "10":
-                    merkmalText10.DateiName = @"C:\Users\Public\MerkmalText10_" + view.Zeitstempel + ".awl";
                     merkmalText10.Text10();
+                    SpeichereDatei(dateiName, merkmalText10.MerkmalTEXT10 );
                     view.AWLQuelleGeneriert("TEXT 10");
                     break;
 
                 case "20":
-                    merkmalText20.DateiName = @"C:\Users\Public\MerkmalText20_" + view.Zeitstempel + ".awl";
                     merkmalText20.Text20();
+                    SpeichereDatei(dateiName, merkmalText20.MerkmalTEXT20);
                     view.AWLQuelleGeneriert("TEXT 20");
                     break;
 
                 case "50":
-                    merkmalText50.DateiName = @"C:\Users\Public\MerkmalText50_" + view.Zeitstempel + ".awl";
                     merkmalText50.Text50();
+                    SpeichereDatei(dateiName, merkmalText50.MerkmalTEXT50);
                     view.AWLQuelleGeneriert("TEXT 50");
                     break;
 
                 case "100":
-                    merkmalText100.DateiName = @"C:\Users\Public\MerkmalText100_" + view.Zeitstempel + ".awl";
                     merkmalText100.Text100();
+                    SpeichereDatei(dateiName, merkmalText100.MerkmalTEXT100);
                     view.AWLQuelleGeneriert("TEXT 100");
                     break;
 
                 case "255":
-                    merkmalText255.DateiName = @"C:\Users\Public\MerkmalText255_" + view.Zeitstempel + ".awl";
                     merkmalText255.Text255();
+                    SpeichereDatei(dateiName, merkmalText255.MerkmalTEXT255);
                     view.AWLQuelleGeneriert("TEXT 255");
                     break;
 
                 case "F":
-                    merkmalFloat.DateiName = @"C:\Users\Public\MerkmalFloat_" + view.Zeitstempel + ".awl";
                     merkmalFloat.Float();
+                    SpeichereDatei(dateiName, merkmalFloat.MerkmalFLOAT);
                     view.AWLQuelleGeneriert("FLOAT");
                     
                     break;
@@ -87,6 +88,13 @@ namespace IPM_Erzeugen
 
         }
 
+
+        private void SpeichereDatei(string dateiName, string[] merkmal)
+        {
+            System.IO.File.AppendAllLines(dateiName, awlQuellcode.Header);
+            System.IO.File.AppendAllLines(dateiName, merkmal);
+            System.IO.File.AppendAllText(dateiName, awlQuellcode.EndFunction);
+        }
 
     }
 }

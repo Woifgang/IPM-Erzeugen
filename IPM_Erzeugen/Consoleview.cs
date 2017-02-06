@@ -13,6 +13,7 @@ namespace IPM_Erzeugen
         {
         }
 
+        public string AnzahlMerkmale { get; set; }
         public string DBnummer { get; set; }
         public string Stationbezeichnung { get; set; }
         public string Merkmalsblock { get; set; }
@@ -25,7 +26,6 @@ namespace IPM_Erzeugen
 
         public void HoleBenutzereingabe()
         {
-
             Zeitstempel = AktuelleUhrzeit();
             Console.WriteLine("Merkmaltyp eintragen.");
             Console.WriteLine("Für Text -> 10, 20, 50, 100 oder 255");
@@ -34,13 +34,11 @@ namespace IPM_Erzeugen
             Stationbezeichnung = BenutzerEingabe("Stationsbezeichnung eintragen: ");
             Merkmalsblock = BenutzerEingabe("Merkmalsblock siehe UDT eintragen: ");
             MerkmalKennung = BenutzerEingabe("Merkmalkennung eintragen: ");
-            if (MerkmalTyp == "F")
-            {
-                MerkmalEinheit = BenutzerEingabe("Merkmal Einheit angeben: ");
-            }
-            MerkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");
-
-            
+              if (MerkmalTyp == "F")
+                {
+                    MerkmalEinheit = BenutzerEingabe("Merkmal Einheit angeben: ");
+                }
+                MerkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");    
         }
 
         public string BeendeProgramm()

@@ -18,7 +18,7 @@ namespace IPM_Erzeugen.MerkmalTyp
             this.view = view;
         }
 
-        public string DateiName { get; set; }
+        public string[] MerkmalFLOAT { get; set; }
 
         public void Float()
         {
@@ -38,11 +38,7 @@ namespace IPM_Erzeugen.MerkmalTyp
             string[] transferiereAnzahlParameter = awlQuellcode.AdresseDBZusammenbauen("anzahlParameter");
 
             string[] merkmalFloat = {
-                // Header
-                awlQuellcode.FunktionStart,
-                awlQuellcode.Titel,
-                awlQuellcode.Version,
-                awlQuellcode.Begin,
+                
                 // Netzwerk 1 Merkmal nur Netzwerktitel
                 awlQuellcode.Network,
                 //awlQuellcode.NetworkTitle,
@@ -130,15 +126,9 @@ namespace IPM_Erzeugen.MerkmalTyp
                  // Netzwerk 9 Leernetzwerk
                 awlQuellcode.Network,
                 awlQuellcode.NetzwerkTitel("Leernetzwerk zur Orientierung"),
-
-                // Ende
-                //awlQuellcode.EndFunction
+                
             };
-
-            System.IO.File.WriteAllLines(DateiName, merkmalFloat);
-
-            // Funktion AWL Quelle schließen
-             System.IO.File.AppendAllText(DateiName, awlQuellcode.EndFunction);
+            MerkmalFLOAT = merkmalFloat;
         }
     }
 }

@@ -24,9 +24,9 @@ namespace IPM_Erzeugen
         public string Network { get; private set; }
         public string NetworkTitle { get; private set; }
         public string EndFunction { get; private set; }
+        public string[] Header { get; set; }
 
 
-        
         public void AWLStruktur()
         {
             FunktionStart = "FUNCTION" + BenutzerdefinierterTitel( "\"TEST__QUELLE\"" ) + ": VOID";
@@ -37,6 +37,7 @@ namespace IPM_Erzeugen
             Begin = "BEGIN";
             Network = "NETWORK";
             EndFunction = "END_FUNCTION";
+            Header = AWLQuellCodeHeader();
         }
 
         public string Variable(string name, string datentyp, string kommentar)
@@ -119,6 +120,29 @@ namespace IPM_Erzeugen
                 }
             }
             return tmp;
+        }
+
+        private string[] AWLQuellCodeHeader()
+        {
+            string[] header = {
+           FunktionStart,
+                Titel,
+                Version,
+                // Variablen
+                VarTempStart,
+                Variable("_retval", "int", ""),
+                Variable("t_WIO", "BOOL", "HM Werker-IO"),
+                Variable("t_WNIO", "BOOL", "HM Werker-NIO"),
+                Variable("t_ABGW", "BOOL", "HM abgewählt"),
+                Variable("t_NG", "BOOL", "HM nicht getätigt"),
+                Variable("t_ZIO", "BOOL", "HM nach 2. mal IO"),
+                Variable("t_RIO", "BOOL", "HM nach Rep IO"),
+                Variable("t_ok", "BOOL", "HM Status OK"),
+                Variable("t_HW_R", "REAL", "Hilfswert Real"),
+                VarTempEnd,
+                Begin
+            };
+            return header;
         }
 
     }
