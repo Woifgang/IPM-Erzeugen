@@ -4,10 +4,11 @@
 
 #    Prioriät hoch:    #####################################################################################################
 	
-	- Mehrere Merkmale eingeben können. 
-		-- Beim Beenden wird das merkmal nochmals reinkopiert
+	- Sortierung der Benutzerabfragen
+		
 
 	- Parameter hinzufügen
+		-- Abfrage mit J/N
 		-- Anzahl der Parameter eingeben und mit einer Schleifen den die Anzahl der Parameter in Code umwandeln.
 
 #    Prioriät niedrig:    ##################################################################################################
@@ -28,6 +29,7 @@
 ############################################################################################################################
 	
 	- Mehrere Merkmale eingeben können. 
+		-- Beim Beenden wird das merkmal nochmals reinkopiert
 		-- Wenn Merkmal erzeugt wurde, soll es möglich sein X-belibige Merkmale einzugeben 
 		   und diese in der AWL-Quelle aufreihen. 
 		   ->  mit dieser Codezeile Möglich 

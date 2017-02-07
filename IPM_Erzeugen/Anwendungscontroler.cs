@@ -26,7 +26,11 @@ namespace IPM_Erzeugen
             while (!view.BenutzerWillBeenden )
             {
                 view.NachFolgendeBenutzerEingabe();
-                quelleErstellen.ErzeugeAWLQuellcode();
+                if (!view.BenutzerWillBeenden)
+                {
+                    quelleErstellen.ErzeugeAWLQuellcode();
+                }
+                
             }
             quelleErstellen.ErzeugeEndFuncttion();
             view.BeendeProgramm();
