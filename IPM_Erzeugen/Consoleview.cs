@@ -11,6 +11,7 @@ namespace IPM_Erzeugen
 
         public Consoleview()
         {
+            BenutzerWillBeenden = false;
         }
 
         public string AnzahlMerkmale { get; set; }
@@ -23,22 +24,53 @@ namespace IPM_Erzeugen
         public string MerkmalEinheit { get; set; }
         public string Zeitstempel { get; set; }
 
+        public bool  BenutzerWillBeenden { get; private set; }
+
 
         public void HoleBenutzereingabe()
         {
             Zeitstempel = AktuelleUhrzeit();
-            Console.WriteLine("Merkmaltyp eintragen.");
-            Console.WriteLine("Für Text -> 10, 20, 50, 100 oder 255");
-            MerkmalTyp = BenutzerEingabe("Für Merkmal Float -> F :   ");
+            MerkmalKennung = BenutzerEingabe("Merkmalkennung eintragen: ");
             DBnummer = BenutzerEingabe("DB Nummer eintragen: ");
             Stationbezeichnung = BenutzerEingabe("Stationsbezeichnung eintragen: ");
             Merkmalsblock = BenutzerEingabe("Merkmalsblock siehe UDT eintragen: ");
-            MerkmalKennung = BenutzerEingabe("Merkmalkennung eintragen: ");
-              if (MerkmalTyp == "F")
+            Console.WriteLine("Merkmaltyp eintragen.");
+            Console.WriteLine("Für Text -> 10, 20, 50, 100 oder 255");
+            MerkmalTyp = BenutzerEingabe("Für Merkmal Float -> F :   ");
+
+            if (MerkmalTyp == "F")
                 {
                     MerkmalEinheit = BenutzerEingabe("Merkmal Einheit angeben: ");
                 }
-                MerkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");    
+
+            MerkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");    
+        }
+
+        public void NachFolgendeBenutzerEingabe()
+        {
+            string eingabe = BenutzerEingabe("Weiteres Merkmal eintragen (FERTIG zum Beenden) :   ");
+
+            if (eingabe == "FERTIG")
+            {
+                BenutzerWillBeenden = true;
+            }
+            else
+            {
+
+                MerkmalKennung = eingabe;
+                Merkmalsblock = BenutzerEingabe("Merkmalsblock siehe UDT eintragen: ");
+                Console.WriteLine("Merkmaltyp eintragen.");
+                Console.WriteLine("Für Text -> 10, 20, 50, 100 oder 255");
+                MerkmalTyp = BenutzerEingabe("Für Merkmal Float -> F :   ");
+
+                if (MerkmalTyp == "F")
+                {
+                    MerkmalEinheit = BenutzerEingabe("Merkmal Einheit angeben: ");
+                }
+
+                MerkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");
+            }
+            
         }
 
         public string BeendeProgramm()

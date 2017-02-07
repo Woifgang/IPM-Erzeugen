@@ -37,6 +37,8 @@ namespace IPM_Erzeugen
             this.merkmalText100 = merkmalText100;
             this.merkmalText255 = merkmalText255;
             this.merkmalFloat = merkmalFloat;
+
+            awlQuellcode.AWLStruktur();
         }
 
         public void ErzeugeAWLQuellcode()
@@ -91,8 +93,18 @@ namespace IPM_Erzeugen
 
         private void SpeichereDatei(string dateiName, string[] merkmal)
         {
-            System.IO.File.AppendAllLines(dateiName, awlQuellcode.Header);
             System.IO.File.AppendAllLines(dateiName, merkmal);
+        }
+
+        public void ErzeugeHeader()
+        {
+            string dateiName = @"C:\Users\Public\Merkmal_" + view.Zeitstempel + ".awl";
+            System.IO.File.AppendAllLines(dateiName, awlQuellcode.Header);
+        }
+
+        public void ErzeugeEndFuncttion()
+        {
+            string dateiName = @"C:\Users\Public\Merkmal_" + view.Zeitstempel + ".awl";
             System.IO.File.AppendAllText(dateiName, awlQuellcode.EndFunction);
         }
 

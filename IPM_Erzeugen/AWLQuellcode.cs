@@ -29,8 +29,8 @@ namespace IPM_Erzeugen
 
         public void AWLStruktur()
         {
-            FunktionStart = "FUNCTION" + BenutzerdefinierterTitel( "\"TEST__QUELLE\"" ) + ": VOID";
-            Titel = "TITLE ="+ BenutzerdefinierterTitel(" I bin die Quelle aus Visual Studio ");
+            FunktionStart = "FUNCTION" + BenutzerdefinierterTitel( "\"IPM__QUELLE\"" ) + ": VOID";
+            Titel = "TITLE ="+ BenutzerdefinierterTitel(" Automatisch Generierte Quelle ");
             Version = "VERSION : 0.1";
             VarTempStart = "VAR_TEMP";
             VarTempEnd = "END_VAR";

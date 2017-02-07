@@ -19,8 +19,16 @@ namespace IPM_Erzeugen
        
         public void AnzeigeConsole()
         {
+
             view.HoleBenutzereingabe();
+            quelleErstellen.ErzeugeHeader();
             quelleErstellen.ErzeugeAWLQuellcode();
+            while (!view.BenutzerWillBeenden )
+            {
+                view.NachFolgendeBenutzerEingabe();
+                quelleErstellen.ErzeugeAWLQuellcode();
+            }
+            quelleErstellen.ErzeugeEndFuncttion();
             view.BeendeProgramm();
         }
 

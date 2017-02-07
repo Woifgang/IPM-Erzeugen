@@ -22,7 +22,7 @@ namespace IPM_Erzeugen.MerkmalTyp
 
         public void Text255()
         {
-            awlQuellcode.AWLStruktur();
+            //awlQuellcode.AWLStruktur();
 
             string[] ladeStandartwert = awlQuellcode.StandartwerteLaden();
             string[] ladeKennung = awlQuellcode.MerkmalDetailsLaden(view.MerkmalKennung);
