@@ -8,7 +8,10 @@
 		
 
 	- Parameter hinzufügen
-		-- UDT Eingabe M4_Parameter
+		-- Wenn Merkmal Float ist, wird ja zuerst ein aus dem UDT "M4_Daten" erzeugt
+			--- Wenn Parameter vorhanden sind "M4_Daten" bei "M4_" trennen und anstatt "Daten" "Parameter" schreiben
+			--- Größe des Array´s im UDT einbauen
+		
 		
 
            

@@ -62,23 +62,6 @@ namespace IPM_Erzeugen
             }
         }
 
-        public void ParameterEingabe()
-        {
-            if (ParameterVorhanden == "J")
-            {
-                string parameterEingabe = BenutzerEingabe("Parameterkennung eintragen (FERTIG zum Beenden): ");
-                if (parameterEingabe == "FERTIG")
-                {
-                    ParameterEnde = true;
-                    Console.Write("Parameter abgeschlossen...");
-                }
-                else
-                {
-                    parameterkennung = parameterEingabe;
-                }
-            }
-        }
-
         public void NachFolgendeBenutzerEingabe()
         {
             string eingabe = BenutzerEingabe("Weiteren Merkmalsblock siehe UDT eintragen (FERTIG zum Beenden): ");
@@ -114,6 +97,23 @@ namespace IPM_Erzeugen
                             parameterkennung = parameterEingabe;
                         }
                     }
+                }
+            }
+        }
+
+        public void ParameterEingabe()
+        {
+            if (ParameterVorhanden == "J")
+            {
+                string parameterEingabe = BenutzerEingabe("Parameterkennung eintragen (FERTIG zum Beenden): ");
+                if (parameterEingabe == "FERTIG")
+                {
+                    ParameterEnde = true;
+                    Console.Write("Parameter abgeschlossen...");
+                }
+                else
+                {
+                    parameterkennung = parameterEingabe;
                 }
             }
         }
