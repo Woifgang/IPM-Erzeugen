@@ -17,6 +17,7 @@ namespace IPM_Erzeugen
         private MerkmalTyp.MerkmalText100 merkmalText100;
         private MerkmalTyp.MerkmalText255 merkmalText255;
         private MerkmalTyp.MerkmalFloat merkmalFloat;
+        private Parameter.ParameterFloat parameterFloat;
 
         public QuelleErstellen(
             Consoleview view, 
@@ -26,7 +27,8 @@ namespace IPM_Erzeugen
             MerkmalTyp.MerkmalText50 merkmalText50, 
             MerkmalTyp.MerkmalText100 merkmalText100, 
             MerkmalTyp.MerkmalText255 merkmalText255, 
-            MerkmalTyp.MerkmalFloat merkmalFloat
+            MerkmalTyp.MerkmalFloat merkmalFloat,
+            Parameter.ParameterFloat parameterFloat
             )
         {
             this.view = view;
@@ -37,10 +39,12 @@ namespace IPM_Erzeugen
             this.merkmalText100 = merkmalText100;
             this.merkmalText255 = merkmalText255;
             this.merkmalFloat = merkmalFloat;
+            this.parameterFloat = parameterFloat;
 
             awlQuellcode.AWLStruktur();
+            
         }
-
+        
         public void ErzeugeAWLQuellcode()
         {
             string dateiName = @"C:\Users\Public\Merkmal_" + view.Zeitstempel + ".awl";
@@ -49,7 +53,6 @@ namespace IPM_Erzeugen
                 case "10":
                     merkmalText10.Text10();
                     SpeichereDatei(dateiName, merkmalText10.MerkmalTEXT10 );
-                    
                     view.AWLQuelleGeneriert("TEXT 10");
                     break;
 
@@ -89,6 +92,15 @@ namespace IPM_Erzeugen
                     break;
             }
 
+        }
+
+        // Todo:
+        public void ErzeugeParameter()
+        {
+            string dateiName = @"C:\Users\Public\Merkmal_" + view.Zeitstempel + ".awl";
+            parameterFloat.Float();
+            SpeichereDatei(dateiName, parameterFloat.ParameterFLOAT);
+            SpeichereDatei(dateiName, awlQuellcode.ErzeugeFC_KONV_REAL_CHAR(view.DBnummer, view.Stationbezeichnung, "M4_Parameter", "1"));
         }
 
 

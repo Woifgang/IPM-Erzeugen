@@ -24,7 +24,7 @@ namespace IPM_Erzeugen
         public string Network { get; private set; }
         public string NetworkTitle { get; private set; }
         public string EndFunction { get; private set; }
-        public string[] Header { get; set; }
+        public string[] Header { get; private set; }
 
 
         public void AWLStruktur()
@@ -91,9 +91,9 @@ namespace IPM_Erzeugen
         public string[] MerkmalDetailsLaden(string wert)
         {
             string kennung = wert;
-            string[] zerlegen = new string[18];
+            string[] zerlegen = new string[20];
 
-            for (int i = 0; i < 18; i++)
+            for (int i = 0; i < 20; i++)
             {
                 if (i < kennung.Length)
                 {
@@ -196,7 +196,8 @@ namespace IPM_Erzeugen
                 "CALL \"FC_KONV_REAL_CHAR\" (",
                 "Wert := #t_HW_R,",
                 "Anz_Nachkomma := 2,",
-                "Zeiger := DB"+dbNummer + ".daten."+station+"."+parameter+"["+parameterNummer+"].numWert,",
+               // "Zeiger := DB"+dbNummer + ".daten."+station+"."+parameter+"["+parameterNummer+"].numWert,",
+                "Zeiger := DB"+dbNummer + ".daten."+station+".M4_Parameter[1].numWert,",
                 "Leerzeichen := \"VKE1\");",
             };
             return function;

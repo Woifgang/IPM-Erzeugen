@@ -8,10 +8,7 @@
 		
 
 	- Parameter hinzufügen
-		-- Abfrage mit J/N
-		-- Anzahl des Parameter Arrays eingeben und verwerten
-		-- Anzahl der Parameter eingeben und mit einer Schleifen den die Anzahl der Parameter in Code umwandeln.
-		-- SpeichereDatei(dateiName, awlQuellcode.ErzeugeFC_KONV_REAL_CHAR(view.DBnummer,view.Stationbezeichnung,"M4_Parameter","1"));
+		-- UDT Eingabe M4_Parameter
 		
 
            
@@ -34,6 +31,10 @@
 	
 	- Parameter hinzufügen
 		-- FC       CALL  "FC_KONV_REAL_CHAR" erzeugen
+		-- Abfrage mit J/N
+		-- Anzahl des Parameter Arrays eingeben und verwerten
+		-- Anzahl der Parameter eingeben und mit einer Schleifen den die Anzahl der Parameter in Code umwandeln.
+		-- SpeichereDatei(dateiName, awlQuellcode.ErzeugeFC_KONV_REAL_CHAR(view.DBnummer,view.Stationbezeichnung,"M4_Parameter","1"));
 	
 	- Mehrere Merkmale eingeben können. 
 		-- Beim Beenden wird das merkmal nochmals reinkopiert

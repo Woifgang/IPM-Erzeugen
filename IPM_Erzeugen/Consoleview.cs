@@ -12,6 +12,7 @@ namespace IPM_Erzeugen
         public Consoleview()
         {
             BenutzerWillBeenden = false;
+            ParameterEnde = false;
         }
 
         public string AnzahlMerkmale { get; set; }
@@ -23,34 +24,64 @@ namespace IPM_Erzeugen
         public string MerkmalTyp { get; set; }
         public string MerkmalEinheit { get; set; }
         public string Zeitstempel { get; set; }
-        public string ParameterKennung { get; set; }
+        
+        public string ParameterVorhanden { get; set; }
+       // public string ParameterAnzahl { get; set; }
+
+        private string parameterkennung;
+
+        public string ParameterKennung
+        {
+            get { return parameterkennung; }
+            set { parameterkennung = value; }
+        }
 
 
         public bool  BenutzerWillBeenden { get; private set; }
+        public bool ParameterEnde { get; private set; }
 
 
         public void HoleBenutzereingabe()
         {
             Zeitstempel = AktuelleUhrzeit();
-            MerkmalKennung = BenutzerEingabe("Merkmalkennung eintragen: ");
+
             DBnummer = BenutzerEingabe("DB Nummer eintragen: ");
             Stationbezeichnung = BenutzerEingabe("Stationsbezeichnung eintragen: ");
             Merkmalsblock = BenutzerEingabe("Merkmalsblock siehe UDT eintragen: ");
+            MerkmalKennung = BenutzerEingabe("Merkmalkennung eintragen: ");
+            MerkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");
             Console.WriteLine("Merkmaltyp eintragen.");
             Console.WriteLine("Für Text -> 10, 20, 50, 100 oder 255");
             MerkmalTyp = BenutzerEingabe("Für Merkmal Float -> F :   ");
 
             if (MerkmalTyp == "F")
-                {
-                    MerkmalEinheit = BenutzerEingabe("Merkmal Einheit angeben: ");
-                }
+            {
+                MerkmalEinheit = BenutzerEingabe("Merkmal Einheit angeben: ");
+                ParameterVorhanden = BenutzerEingabe("Sind Parameter vorhanden? J / N : ");
+                
+            }
+        }
 
-            MerkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");    
+        public void ParameterEingabe()
+        {
+            if (ParameterVorhanden == "J")
+            {
+                string parameterEingabe = BenutzerEingabe("Parameterkennung eintragen (FERTIG zum Beenden): ");
+                if (parameterEingabe == "FERTIG")
+                {
+                    ParameterEnde = true;
+                    Console.Write("Parameter abgeschlossen...");
+                }
+                else
+                {
+                    parameterkennung = parameterEingabe;
+                }
+            }
         }
 
         public void NachFolgendeBenutzerEingabe()
         {
-            string eingabe = BenutzerEingabe("Weiteres Merkmal eintragen (FERTIG zum Beenden) :   ");
+            string eingabe = BenutzerEingabe("Weiteren Merkmalsblock siehe UDT eintragen (FERTIG zum Beenden): ");
 
             if (eingabe == "FERTIG")
             {
@@ -58,9 +89,9 @@ namespace IPM_Erzeugen
             }
             else
             {
-
-                MerkmalKennung = eingabe;
-                Merkmalsblock = BenutzerEingabe("Merkmalsblock siehe UDT eintragen: ");
+                Merkmalsblock = eingabe;
+                MerkmalKennung = BenutzerEingabe("Merkmalkennung eintragen: ");
+                MerkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");
                 Console.WriteLine("Merkmaltyp eintragen.");
                 Console.WriteLine("Für Text -> 10, 20, 50, 100 oder 255");
                 MerkmalTyp = BenutzerEingabe("Für Merkmal Float -> F :   ");
@@ -68,11 +99,23 @@ namespace IPM_Erzeugen
                 if (MerkmalTyp == "F")
                 {
                     MerkmalEinheit = BenutzerEingabe("Merkmal Einheit angeben: ");
-                }
+                    ParameterVorhanden = BenutzerEingabe("Sind Parameter vorhanden? J / N : ");
 
-                MerkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");
+                    if (ParameterVorhanden == "J")
+                    {
+                        string parameterEingabe = BenutzerEingabe("Parameterkennung eintragen (FERTIG zum Beenden): ");
+                        if (parameterEingabe == "FERTIG")
+                        {
+                            ParameterEnde = true;
+                            Console.Write("Parameter abgeschlossen...");
+                        }
+                        else
+                        {
+                            parameterkennung = parameterEingabe;
+                        }
+                    }
+                }
             }
-            
         }
 
         public string BeendeProgramm()

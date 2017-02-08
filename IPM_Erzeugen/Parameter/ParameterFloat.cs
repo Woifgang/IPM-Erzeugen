@@ -24,15 +24,16 @@ namespace IPM_Erzeugen.Parameter
             string[] ladeStandartwert = awlQuellcode.StandartwerteLaden();
 
             // ParameterKennung 
+           
             string[] ladeKennung = awlQuellcode.MerkmalDetailsLaden(view.ParameterKennung);
-
+           
             string[] transferiereKennung = awlQuellcode.AdresseDBZusammenbauen("kennung");
             string[] transferiereDatentyp = awlQuellcode.AdresseDBZusammenbauen("datentyp");
             string[] transferiereNumWert = awlQuellcode.AdresseDBZusammenbauen("numWert");
             
             string[] parameterFloat = {
 
-                //awlQuellcode.NetworkTitle,
+                awlQuellcode.Network,
                 awlQuellcode.NetzwerkTitel("### " + view.Stationbezeichnung + ": Parameter XXX / FLOAT " + view.ParameterKennung + " ###"),
                 
                 // Netzwerk  Parameter Kennung
@@ -60,6 +61,8 @@ namespace IPM_Erzeugen.Parameter
                 ladeKennung[19], transferiereKennung[20],
 
                 // Netzwerk Parameter Datentyp
+                 awlQuellcode.Network,
+                awlQuellcode.NetzwerkTitel(view.Stationbezeichnung+ ": Parameter XXX - Parameter Datentyp"),
                 ladeStandartwert[0], transferiereDatentyp[1],
                 ladeStandartwert[1], transferiereDatentyp[2],
 
@@ -71,7 +74,7 @@ namespace IPM_Erzeugen.Parameter
                 // Zeiger:= "DB_IPM_SEND_BA03".daten.ST350_1.M4_Parameter[1].numWert
                 //Leerzeichen:= "VKE1"
 
-                ladeStandartwert[1], transferiereNumWert[1],
+                //ladeStandartwert[1], transferiereNumWert[1],
 
             };
 

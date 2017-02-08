@@ -20,6 +20,7 @@ namespace IPM_Erzeugen
             MerkmalTyp.MerkmalText50 merkmalText50 = new MerkmalTyp.MerkmalText50(awlQuellcode, view);
             MerkmalTyp.MerkmalText100 merkmalText100 = new MerkmalTyp.MerkmalText100(awlQuellcode, view);
             MerkmalTyp.MerkmalText255 merkmalText255 = new MerkmalTyp.MerkmalText255(awlQuellcode, view);
+            Parameter.ParameterFloat parameterFloat = new Parameter.ParameterFloat(awlQuellcode,view );
 
             QuelleErstellen quelleErstellen = new QuelleErstellen(
                 view, 
@@ -29,7 +30,8 @@ namespace IPM_Erzeugen
                 merkmalText50,
                 merkmalText100,
                 merkmalText255,
-                merkmalFloat
+                merkmalFloat,
+                parameterFloat                 
                 );           
 
             Anwendungscontroler controler = new Anwendungscontroler(view, quelleErstellen );
