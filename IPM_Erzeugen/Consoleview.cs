@@ -23,6 +23,8 @@ namespace IPM_Erzeugen
         public string MerkmalTyp { get; set; }
         public string MerkmalEinheit { get; set; }
         public string Zeitstempel { get; set; }
+        public string ParameterKennung { get; set; }
+
 
         public bool  BenutzerWillBeenden { get; private set; }
 

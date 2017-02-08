@@ -52,6 +52,7 @@
     <Compile Include="MerkmalTyp\MerkmalText20.cs" />
     <Compile Include="MerkmalTyp\MerkmalText255.cs" />
     <Compile Include="MerkmalTyp\MerkmalText50.cs" />
+    <Compile Include="Parameter\ParameterFloat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuelleErstellen.cs" />

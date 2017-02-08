@@ -40,27 +40,54 @@ namespace IPM_Erzeugen
             Header = AWLQuellCodeHeader();
         }
 
-        public string Variable(string name, string datentyp, string kommentar)
+        /// <summary>
+        /// Temporär Variable erzeugen
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="datentyp"></param>
+        /// <param name="kommentar"></param>
+        /// <returns></returns>
+        private string Variable(string name, string datentyp, string kommentar)
         {
             return name + " : " + datentyp + " ; " + " // " + kommentar;
         }
 
+        /// <summary>
+        /// Benuzerdefinierten Text ausgeben
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         private string BenutzerdefinierterTitel(string text)
         {
             return text;
         }
 
+        /// <summary>
+        /// Erzeuge Netzwerktitel
+        /// </summary>
+        /// <param name="beschreiben"></param>
+        /// <returns></returns>
         public string NetzwerkTitel(string beschreiben)
         {
             return "TITLE =" + beschreiben;
         }
 
+        /// <summary>
+        /// Erzeuge Netzwerk Kommentar
+        /// </summary>
+        /// <param name="kommentar"></param>
+        /// <returns></returns>
         public string NetzwerkKommentar(string kommentar)
         {
             return "// " + kommentar;
         }
 
 
+        /// <summary>
+        /// Merkmal Details Laden
+        /// </summary>
+        /// <param name="wert"></param>
+        /// <returns></returns>
         public string[] MerkmalDetailsLaden(string wert)
         {
             string kennung = wert;
@@ -83,6 +110,7 @@ namespace IPM_Erzeugen
 
 
         /// <summary>
+        /// Baut eine Variable zusammen;
         /// Gibt z.B. "  T "DB_IPM_SEND_BA03".daten.ST350_1.M1_Daten.kennung[1]   " zurück abhängig vom eingetragen Wert
         /// </summary>
         /// <param name="wert"></param>
@@ -100,6 +128,7 @@ namespace IPM_Erzeugen
         }
 
         /// <summary>
+        /// Standartwerte Laden;
         /// tmp[0] gibt " L '0'; " zurück!!! 
         /// tmp[1] gibt " L ' '; " zurück!!! 
         /// </summary>
@@ -122,6 +151,7 @@ namespace IPM_Erzeugen
             return tmp;
         }
 
+        // Header für Temporäre Variablen erzeugen
         private string[] AWLQuellCodeHeader()
         {
             string[] header = {
@@ -143,6 +173,33 @@ namespace IPM_Erzeugen
                 Begin
             };
             return header;
+        }
+
+
+        /// <summary>
+        /// Erzeugt den FC FC_KONV_REAL_CHAR;
+        /// Dieser sting wird zusammengebaut
+        /// "DB_IPM_SEND_BA03".daten.ST350_1.M4_Parameter[1].numWert,
+        /// </summary>
+        /// <param name="dbNummer"></param>
+        /// <param name="station"></param>
+        /// <param name="parameter"></param>
+        /// <param name="parameterNummer"></param>
+        /// <returns></returns>
+        public string[] ErzeugeFC_KONV_REAL_CHAR(string dbNummer, string station, string parameter, string parameterNummer)
+        {
+            string[] function =
+            {
+                Network,
+                NetzwerkTitel("Station xxx Merkmal xxx - Parameter xxx - WERT"),
+                NetzwerkKommentar("Hier noch befüllen!!!"),
+                "CALL \"FC_KONV_REAL_CHAR\" (",
+                "Wert := #t_HW_R,",
+                "Anz_Nachkomma := 2,",
+                "Zeiger := DB"+dbNummer + ".daten."+station+"."+parameter+"["+parameterNummer+"].numWert,",
+                "Leerzeichen := \"VKE1\");",
+            };
+            return function;
         }
 
     }

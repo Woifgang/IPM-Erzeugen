@@ -22,7 +22,7 @@ namespace IPM_Erzeugen.MerkmalTyp
 
         public void Float()
         {
-            awlQuellcode.AWLStruktur();
+            //awlQuellcode.AWLStruktur();
 
             string[] ladeStandartwert = awlQuellcode.StandartwerteLaden();
             string[] ladeKennung = awlQuellcode.MerkmalDetailsLaden(view.MerkmalKennung);
@@ -36,6 +36,7 @@ namespace IPM_Erzeugen.MerkmalTyp
             string[] transferiereStufe = awlQuellcode.AdresseDBZusammenbauen("stufe");
             string[] transferiereStufentyp = awlQuellcode.AdresseDBZusammenbauen("stufentyp");
             string[] transferiereAnzahlParameter = awlQuellcode.AdresseDBZusammenbauen("anzahlParameter");
+            
 
             string[] merkmalFloat = {
                 
