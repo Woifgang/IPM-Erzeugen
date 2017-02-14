@@ -53,37 +53,37 @@ namespace IPM_Erzeugen
                 case "10":
                     merkmalText10.Text10();
                     SpeichereDatei(dateiName, merkmalText10.MerkmalTEXT10 );
-                    view.AWLQuelleGeneriert("TEXT 10");
+                    //view.AWLQuelleGeneriert("TEXT 10");
                     break;
 
                 case "20":
                     merkmalText20.Text20();
                     SpeichereDatei(dateiName, merkmalText20.MerkmalTEXT20);
-                    view.AWLQuelleGeneriert("TEXT 20");
+                    //view.AWLQuelleGeneriert("TEXT 20");
                     break;
 
                 case "50":
                     merkmalText50.Text50();
                     SpeichereDatei(dateiName, merkmalText50.MerkmalTEXT50);
-                    view.AWLQuelleGeneriert("TEXT 50");
+                    //view.AWLQuelleGeneriert("TEXT 50");
                     break;
 
                 case "100":
                     merkmalText100.Text100();
                     SpeichereDatei(dateiName, merkmalText100.MerkmalTEXT100);
-                    view.AWLQuelleGeneriert("TEXT 100");
+                    //view.AWLQuelleGeneriert("TEXT 100");
                     break;
 
                 case "255":
                     merkmalText255.Text255();
                     SpeichereDatei(dateiName, merkmalText255.MerkmalTEXT255);
-                    view.AWLQuelleGeneriert("TEXT 255");
+                    //view.AWLQuelleGeneriert("TEXT 255");
                     break;
 
                 case "F":
                     merkmalFloat.Float();
                     SpeichereDatei(dateiName, merkmalFloat.MerkmalFLOAT);
-                    view.AWLQuelleGeneriert("FLOAT");
+                   //view.AWLQuelleGeneriert("FLOAT");
                     break;
 
                 default:
@@ -99,7 +99,7 @@ namespace IPM_Erzeugen
             string dateiName = @"C:\Users\Public\Merkmal_" + view.Zeitstempel + ".awl";
             parameterFloat.Float();
             SpeichereDatei(dateiName, parameterFloat.ParameterFLOAT);
-            SpeichereDatei(dateiName, awlQuellcode.ErzeugeFC_KONV_REAL_CHAR(view.DBnummer, view.Stationbezeichnung, "M4_Parameter", "1"));
+            SpeichereDatei(dateiName, awlQuellcode.ErzeugeFC_KONV_REAL_CHAR(view.DBnummer, view.Stationbezeichnung, view.MerkmalsBlock, view.ParameterZaehlen));
         }
 
 

@@ -27,6 +27,7 @@ namespace IPM_Erzeugen.MerkmalTyp
             string[] ladeStandartwert = awlQuellcode.StandartwerteLaden();
             string[] ladeKennung = awlQuellcode.MerkmalDetailsLaden(view.MerkmalKennung);
             string[] ladeEinheit = awlQuellcode.MerkmalDetailsLaden(view.MerkmalEinheit);
+            //string[] ladeAnzahlParameter = awlQuellcode.AnzahlParameter(view.ParameterZaehlen);
 
             string[] transferiereKennung = awlQuellcode.AdresseDBZusammenbauen("kennung");
             string[] transferiereEinheit = awlQuellcode.AdresseDBZusammenbauen("einheit");
@@ -36,7 +37,7 @@ namespace IPM_Erzeugen.MerkmalTyp
             string[] transferiereStufe = awlQuellcode.AdresseDBZusammenbauen("stufe");
             string[] transferiereStufentyp = awlQuellcode.AdresseDBZusammenbauen("stufentyp");
             string[] transferiereAnzahlParameter = awlQuellcode.AdresseDBZusammenbauen("anzahlParameter");
-            
+
 
             string[] merkmalFloat = {
                 
@@ -121,6 +122,9 @@ namespace IPM_Erzeugen.MerkmalTyp
                  // Netzwerk 8 Parameter
                 awlQuellcode.Network,
                 awlQuellcode.NetzwerkTitel(view.Stationbezeichnung+ ": Merkmal XXX - Parameter"),
+                awlQuellcode.NetzwerkKommentar("Parameter Anzahl muss von Hand eingegeben werden!!!"),
+                //ladeAnzahlParameter[0], transferiereAnzahlParameter[1],
+                //ladeAnzahlParameter[1], transferiereAnzahlParameter[2],
                 ladeStandartwert[0], transferiereAnzahlParameter[1],
                 ladeStandartwert[1], transferiereAnzahlParameter[2],
 

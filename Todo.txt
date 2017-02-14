@@ -5,20 +5,21 @@
 #    Prioriät hoch:    #####################################################################################################
 	
 	- Sortierung der Benutzerabfragen
-	- AWL-Quelle erst beim nach eingabe sämtlicher Daten erzeugen;
-	- Merkmal Float Anzahl der Parameter in einpflegen;
-	- FC       CALL  "FC_KONV_REAL_CHAR" richtige Adresse hinzufügen;
-	- Parameter eintragen bei ersten Aufruf der Anwendung -> aktuell nur möglich ab dem zweiten Eingabeblock;
-
-           
+		-- Parameter eintragen bei ersten Aufruf der Anwendung -> aktuell nur möglich ab dem zweiten Eingabeblock;
+	
+	           
 #    Prioriät niedrig:    ##################################################################################################
 
-	- Ausgabe AWL Quelle erstellt erst nach Fertig;
+	
 
 #    Prioriät niedrig:    ###################################################################################################
 	- Netzwerktitel 
 		-- Merkmalnummer Splitten und in Titel einfügen "Merkmal" 1 STK
-			-- Nur möglich wenn immer der Gleiche Buchstabe vorne dran is 
+			-- Nur möglich wenn immer der Gleiche Buchstabe vorne dran ist
+			
+	- Merkmal Float Anzahl der Parameter in einpflegen;
+		-- Wenn Parameteranzahl < 9 ist -> transferiereAnzahlParameter[1]
+		--						> 9 ist -> transferiereAnzahlParameter[2] 
 
 
 
@@ -28,6 +29,9 @@
 #    Erledigt:    ##########################################################################################################
 ############################################################################################################################
 	
+	- FC       CALL  "FC_KONV_REAL_CHAR" richtige Adresse hinzufügen;
+	- Ausgabe AWL Quelle erstellt erst nach Fertig;
+	- AWL-Quelle erst beim nach eingabe sämtlicher Daten erzeugen;
 	- Parameter hinzufügen
 		-- Wenn Merkmal Float ist, wird ja zuerst ein aus dem UDT "M4_Daten" erzeugt
 			--- Wenn Parameter vorhanden sind "M4_Daten" bei "M4_" trennen und anstatt "Daten" "Parameter" schreiben

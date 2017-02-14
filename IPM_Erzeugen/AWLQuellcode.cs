@@ -108,10 +108,27 @@ namespace IPM_Erzeugen
             return zerlegen;
         }
 
+        public string[] AnzahlParameter(int anzahl)
+        {
+            string[] parameterAnzahl = new string[2];
+            string tmp = Convert.ToString(anzahl);
+
+            if (anzahl <= 9)
+            {
+                parameterAnzahl[1] = "L '" + tmp + "';";
+            }
+            else
+            {
+                parameterAnzahl[2] = "L ' ';";
+            }
+
+            return parameterAnzahl;
+        }
+
 
         /// <summary>
         /// Baut eine Variable zusammen;
-        /// Gibt z.B. "  T "DB_IPM_SEND_BA03".daten.ST350_1.M1_Daten.kennung[1]   " zurück abhängig vom eingetragen Wert
+        /// Gibt z.B.: "  T "DB_IPM_SEND_BA03".daten.ST350_1.M1_Daten.kennung[1]   " zurück abhängig vom eingetragen Wert
         /// </summary>
         /// <param name="wert"></param>
         /// <returns></returns>
@@ -122,16 +139,22 @@ namespace IPM_Erzeugen
             for (int i = 1; i < 256; i++)
             {
                 string kennung = Convert.ToString(i);
-                tmp[i] = "T DB" + view.DBnummer + ".daten." + view.Stationbezeichnung + "." + view.Merkmalsblock + "." + wert + "[" + kennung + "];";
+                tmp[i] = "T DB" + view.DBnummer + ".daten." + view.Stationbezeichnung + "." + view.MerkmalsBlock + "." + wert + "[" + kennung + "];";
             }
             return tmp;
         }
 
-
+ 
+        /// <summary>
+        /// Baut eine Variable zusammen;
+        /// Gitbt z.B.:  "DB_IPM_SEND_BA03".daten.ST350_1.M5_Parameter[1].kennung[1] zurück
+        /// </summary>
+        /// <param name="wert"></param>
+        /// <returns></returns>
         public string[] AdresseDBZusammenbauenParameter(string wert)
         {
             //Merkmalsblock zerlegen
-            string s1 = view.Merkmalsblock;
+            string s1 = view.MerkmalsBlock;
             char[] charSeparators = new char[] { '_' };
             string[] result;
             result = s1.Split(charSeparators);
@@ -198,6 +221,18 @@ namespace IPM_Erzeugen
         }
 
 
+        private string KennungZerlegen(string merkmalsBlock, int parameterAnzahl)
+        {
+            string s1 = merkmalsBlock;
+            char[] charSeparators = new char[] { '_' };
+            string[] result;
+            result = s1.Split(charSeparators);
+
+            string array = Convert.ToString(parameterAnzahl);
+
+            return result[0];
+        }
+
         /// <summary>
         /// Erzeugt den FC FC_KONV_REAL_CHAR;
         /// Dieser sting wird zusammengebaut
@@ -208,8 +243,11 @@ namespace IPM_Erzeugen
         /// <param name="parameter"></param>
         /// <param name="parameterNummer"></param>
         /// <returns></returns>
-        public string[] ErzeugeFC_KONV_REAL_CHAR(string dbNummer, string station, string parameter, string parameterNummer)
+        public string[] ErzeugeFC_KONV_REAL_CHAR(string dbNummer, string station, string merkmalsBlock, int parameterAnzahl)
         {
+            string tmp = KennungZerlegen(merkmalsBlock, parameterAnzahl);
+
+
             string[] function =
             {
                 Network,
@@ -219,7 +257,7 @@ namespace IPM_Erzeugen
                 "Wert := #t_HW_R,",
                 "Anz_Nachkomma := 2,",
                // "Zeiger := DB"+dbNummer + ".daten."+station+"."+parameter+"["+parameterNummer+"].numWert,",
-                "Zeiger := DB"+dbNummer + ".daten."+station+".M4_Parameter[1].numWert,",
+                "Zeiger := DB"+dbNummer + ".daten."+station+"."+tmp+"_Parameter["+Convert.ToString(parameterAnzahl )+"].numWert,",
                 "Leerzeichen := \"VKE1\");",
             };
             return function;

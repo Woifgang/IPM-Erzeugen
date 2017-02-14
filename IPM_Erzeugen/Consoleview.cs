@@ -19,7 +19,7 @@ namespace IPM_Erzeugen
         public string AnzahlMerkmale { get; set; }
         public string DBnummer { get; set; }
         public string Stationbezeichnung { get; set; }
-        public string Merkmalsblock { get; set; }
+        public string MerkmalsBlock { get; set; }
         public string MerkmalKennung { get; set; }
         public string MerkmalBeschreibung { get; set; }
         public string MerkmalTyp { get; set; }
@@ -50,7 +50,7 @@ namespace IPM_Erzeugen
             
             DBnummer = BenutzerEingabe("DB Nummer eintragen: ");
             Stationbezeichnung = BenutzerEingabe("Stationsbezeichnung eintragen: ");
-            Merkmalsblock = BenutzerEingabe("Merkmalsblock siehe UDT eintragen: ");
+            MerkmalsBlock = BenutzerEingabe("Merkmalsblock siehe UDT eintragen: ");
             MerkmalKennung = BenutzerEingabe("Merkmalkennung eintragen: ");
             MerkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");
             Console.WriteLine("Merkmaltyp eintragen.");
@@ -76,7 +76,7 @@ namespace IPM_Erzeugen
             }
             else
             {
-                Merkmalsblock = eingabe;
+                MerkmalsBlock = eingabe;
                 MerkmalKennung = BenutzerEingabe("Merkmalkennung eintragen: ");
                 MerkmalBeschreibung = BenutzerEingabe("Merkmalbeschreibung eintragen: ");
                 Console.WriteLine("Merkmaltyp eintragen.");
@@ -115,9 +115,10 @@ namespace IPM_Erzeugen
             return Console.ReadLine();
         }
 
-        public void AWLQuelleGeneriert(string merkmaltyp)
+        public void AWLQuelleGeneriert(string zeitstempel)
         {
-            Console.WriteLine("AWL-Quelle des Merkmalstyp \"" + merkmaltyp + "\" erfolgreich erstellt. ");
+            Console.WriteLine("AWL-Quelle mit dem Zeitspempel \"" + zeitstempel + "\" erfolgreich erstellt. ");
+            Console.WriteLine("Die AWL-Quelle wurde unter  C:\"Users\"Public\"Merkmal_"+zeitstempel+".awl gespeichert. ");
         }
 
         private string BenutzerEingabe(string eingabe)

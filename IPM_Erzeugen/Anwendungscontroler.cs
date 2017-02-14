@@ -22,17 +22,7 @@ namespace IPM_Erzeugen
 
             view.HoleBenutzereingabe();
             quelleErstellen.ErzeugeHeader();
-            quelleErstellen.ErzeugeAWLQuellcode();
-
-           /* while (!view.ParameterEnde)
-            {
-                view.ParameterEingabe();
-                if (!view.ParameterEnde)
-                {
-                    quelleErstellen.ErzeugeParameter();
-                }
-            }*/
-            
+            quelleErstellen.ErzeugeAWLQuellcode();           
 
             while (!view.BenutzerWillBeenden )
             {
@@ -54,6 +44,7 @@ namespace IPM_Erzeugen
                 
             }
             quelleErstellen.ErzeugeEndFuncttion();
+            view.AWLQuelleGeneriert(view.Zeitstempel);
             view.BeendeProgramm();
         }
 
