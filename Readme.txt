@@ -8,9 +8,24 @@
 
 #    Allgemein:    ###############################################################################################################
 Erzeuge eine AWL-Quelle der IPM Daten. 
-Abhängig von von den Eingetragenen Werten soll der komplette AWL Quellcode erzeugt werden.
-Aktuell wird ein AWL Code vom Merkmalstyp "Text10" erzeugt
-Die Quelle wird unter " C:\Users\Public\xxx.awl " gespeichert
+Abhängig von den eingetragenen Werten wird der komplette AWL Quellcode erzeugt.
+
+Unterstützte Merkmale:
+-- Text10
+-- Text20
+-- Text50
+-- Text 100
+-- Text 255
+-- Float
+	-- Parameter Float
+
+Die Quelle wird unter " C:\Users\Public\Merkmal_JJJJMMTT_hhmmss.awl " mit dem Zeitstempel gespeichert.
+
+#    Version 1.0.6254.20634    ###################################################################################################
+Beschreibung:
+Undendliche eingabe von Merkmalen möglich.
+Sämtliche Merkmale werden erzeugt. Zudem wird bei dem Merkmal Float abgefragt ob dieses Parameter enthält. 
+Der AWL Code wird nach Beenden des Programms erzeugt.
 
 #    Version 1.0.6242.23690    ###################################################################################################
 Beschreibung:
