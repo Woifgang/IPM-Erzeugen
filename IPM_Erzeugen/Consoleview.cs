@@ -13,6 +13,7 @@ namespace IPM_Erzeugen
         {
             BenutzerWillBeenden = false;
             ParameterEnde = false;
+            ParameterZaehlen = 0;
         }
 
         public string AnzahlMerkmale { get; set; }
@@ -38,13 +39,15 @@ namespace IPM_Erzeugen
 
 
         public bool  BenutzerWillBeenden { get; private set; }
-        public bool ParameterEnde { get; private set; }
+        public bool ParameterEnde { get;  set; }
+
+        public int ParameterZaehlen { get; set; }
 
 
         public void HoleBenutzereingabe()
         {
             Zeitstempel = AktuelleUhrzeit();
-
+            
             DBnummer = BenutzerEingabe("DB Nummer eintragen: ");
             Stationbezeichnung = BenutzerEingabe("Stationsbezeichnung eintragen: ");
             Merkmalsblock = BenutzerEingabe("Merkmalsblock siehe UDT eintragen: ");
@@ -60,6 +63,7 @@ namespace IPM_Erzeugen
                 ParameterVorhanden = BenutzerEingabe("Sind Parameter vorhanden? J / N : ");
                 
             }
+           
         }
 
         public void NachFolgendeBenutzerEingabe()
@@ -83,20 +87,7 @@ namespace IPM_Erzeugen
                 {
                     MerkmalEinheit = BenutzerEingabe("Merkmal Einheit angeben: ");
                     ParameterVorhanden = BenutzerEingabe("Sind Parameter vorhanden? J / N : ");
-
-                    if (ParameterVorhanden == "J")
-                    {
-                        string parameterEingabe = BenutzerEingabe("Parameterkennung eintragen (FERTIG zum Beenden): ");
-                        if (parameterEingabe == "FERTIG")
-                        {
-                            ParameterEnde = true;
-                            Console.Write("Parameter abgeschlossen...");
-                        }
-                        else
-                        {
-                            parameterkennung = parameterEingabe;
-                        }
-                    }
+                    //ParameterEingabe();
                 }
             }
         }

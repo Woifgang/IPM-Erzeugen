@@ -24,14 +24,14 @@ namespace IPM_Erzeugen
             quelleErstellen.ErzeugeHeader();
             quelleErstellen.ErzeugeAWLQuellcode();
 
-            while (!view.ParameterEnde)
+           /* while (!view.ParameterEnde)
             {
                 view.ParameterEingabe();
                 if (!view.ParameterEnde)
                 {
                     quelleErstellen.ErzeugeParameter();
                 }
-            }
+            }*/
             
 
             while (!view.BenutzerWillBeenden )
@@ -43,6 +43,7 @@ namespace IPM_Erzeugen
 
                     while (!view.ParameterEnde)
                     {
+                        view.ParameterZaehlen = view.ParameterZaehlen + 1;
                         view.ParameterEingabe();
                         if (!view.ParameterEnde)
                         {

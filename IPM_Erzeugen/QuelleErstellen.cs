@@ -84,7 +84,6 @@ namespace IPM_Erzeugen
                     merkmalFloat.Float();
                     SpeichereDatei(dateiName, merkmalFloat.MerkmalFLOAT);
                     view.AWLQuelleGeneriert("FLOAT");
-                    
                     break;
 
                 default:

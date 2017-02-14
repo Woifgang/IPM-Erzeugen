@@ -127,6 +127,28 @@ namespace IPM_Erzeugen
             return tmp;
         }
 
+
+        public string[] AdresseDBZusammenbauenParameter(string wert)
+        {
+            //Merkmalsblock zerlegen
+            string s1 = view.Merkmalsblock;
+            char[] charSeparators = new char[] { '_' };
+            string[] result;
+            result = s1.Split(charSeparators);
+
+            string array = Convert.ToString(view.ParameterZaehlen);
+            
+
+            string[] tmp = new string[256];
+
+            for (int i = 1; i < 256; i++)
+            {
+                string kennung = Convert.ToString(i);
+                tmp[i] = "T DB" + view.DBnummer + ".daten." + view.Stationbezeichnung + "." + result[0]  + "_Parameter["+ array +"]." + wert + "[" + kennung + "];";
+            }
+            return tmp;
+        }
+
         /// <summary>
         /// Standartwerte Laden;
         /// tmp[0] gibt " L '0'; " zurück!!! 

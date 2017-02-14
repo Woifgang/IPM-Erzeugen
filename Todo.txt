@@ -5,19 +5,15 @@
 #    Prioriät hoch:    #####################################################################################################
 	
 	- Sortierung der Benutzerabfragen
-		
-
-	- Parameter hinzufügen
-		-- Wenn Merkmal Float ist, wird ja zuerst ein aus dem UDT "M4_Daten" erzeugt
-			--- Wenn Parameter vorhanden sind "M4_Daten" bei "M4_" trennen und anstatt "Daten" "Parameter" schreiben
-			--- Größe des Array´s im UDT einbauen
-		
-		
+	- AWL-Quelle erst beim nach eingabe sämtlicher Daten erzeugen;
+	- Merkmal Float Anzahl der Parameter in einpflegen;
+	- FC       CALL  "FC_KONV_REAL_CHAR" richtige Adresse hinzufügen;
+	- Parameter eintragen bei ersten Aufruf der Anwendung -> aktuell nur möglich ab dem zweiten Eingabeblock;
 
            
 #    Prioriät niedrig:    ##################################################################################################
 
-	
+	- Ausgabe AWL Quelle erstellt erst nach Fertig;
 
 #    Prioriät niedrig:    ###################################################################################################
 	- Netzwerktitel 
@@ -33,6 +29,9 @@
 ############################################################################################################################
 	
 	- Parameter hinzufügen
+		-- Wenn Merkmal Float ist, wird ja zuerst ein aus dem UDT "M4_Daten" erzeugt
+			--- Wenn Parameter vorhanden sind "M4_Daten" bei "M4_" trennen und anstatt "Daten" "Parameter" schreiben
+			--- Größe des Array´s im UDT einbauen
 		-- FC       CALL  "FC_KONV_REAL_CHAR" erzeugen
 		-- Abfrage mit J/N
 		-- Anzahl des Parameter Arrays eingeben und verwerten

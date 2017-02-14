@@ -27,9 +27,9 @@ namespace IPM_Erzeugen.Parameter
            
             string[] ladeKennung = awlQuellcode.MerkmalDetailsLaden(view.ParameterKennung);
            
-            string[] transferiereKennung = awlQuellcode.AdresseDBZusammenbauen("kennung");
-            string[] transferiereDatentyp = awlQuellcode.AdresseDBZusammenbauen("datentyp");
-            string[] transferiereNumWert = awlQuellcode.AdresseDBZusammenbauen("numWert");
+            string[] transferiereKennung = awlQuellcode.AdresseDBZusammenbauenParameter("kennung");
+            string[] transferiereDatentyp = awlQuellcode.AdresseDBZusammenbauenParameter("datentyp");
+            string[] transferiereNumWert = awlQuellcode.AdresseDBZusammenbauenParameter("numWert");
             
             string[] parameterFloat = {
 
