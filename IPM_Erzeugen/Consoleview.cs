@@ -12,7 +12,7 @@ namespace IPM_Erzeugen
         public Consoleview()
         {
             BenutzerWillBeenden = false;
-            ParameterEnde = false;
+            ParameterEnde = true;
             ParameterZaehlen = 0;
         }
 
@@ -61,7 +61,7 @@ namespace IPM_Erzeugen
             {
                 MerkmalEinheit = BenutzerEingabe("Merkmal Einheit angeben: ");
                 ParameterVorhanden = BenutzerEingabe("Sind Parameter vorhanden? J / N : ");
-                
+                ParameterVorhandenJaNein();
             }
            
         }
@@ -87,8 +87,20 @@ namespace IPM_Erzeugen
                 {
                     MerkmalEinheit = BenutzerEingabe("Merkmal Einheit angeben: ");
                     ParameterVorhanden = BenutzerEingabe("Sind Parameter vorhanden? J / N : ");
-                    //ParameterEingabe();
+                    ParameterVorhandenJaNein();
                 }
+            }
+        }
+
+        private void ParameterVorhandenJaNein()
+        {
+            if (ParameterVorhanden == "J")
+            {
+                ParameterEnde = false;
+            }
+            else
+            {
+                ParameterEnde = true;
             }
         }
 
