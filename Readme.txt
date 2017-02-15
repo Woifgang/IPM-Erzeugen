@@ -21,20 +21,16 @@ Unterstützte Merkmale:
 
 Die Quelle wird unter " C:\Users\Public\Merkmal_JJJJMMTT_hhmmss.awl " mit dem Zeitstempel gespeichert.
 
-#    Version 1.0.625.20310    ###################################################################################################
-Log:
-Fehlerbehebung von Schleifen im Zusammenhang mit Parametern
-
 #    Version 1.0.6254.20634    ###################################################################################################
-Log:
+Beschreibung:
 Undendliche eingabe von Merkmalen möglich.
 Sämtliche Merkmale werden erzeugt. Zudem wird bei dem Merkmal Float abgefragt ob dieses Parameter enthält. 
 Der AWL Code wird nach Beenden des Programms erzeugt.
 
 #    Version 1.0.6242.23690    ###################################################################################################
-Log:
+Beschreibung:
 Merkmal Text 20 und Merkmal Float möglich
 
 #    Version  1.0.6242.19342    ##################################################################################################
-Log:
+Beschreibung:
 Nur Merkmal Text 10 möglich
