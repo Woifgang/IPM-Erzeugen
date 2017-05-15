@@ -20,6 +20,9 @@ Unterstützte Merkmale:
 	-- Parameter Float
 
 Die Quelle wird unter " C:\Users\Public\Merkmal_JJJJMMTT_hhmmss.awl " mit dem Zeitstempel gespeichert.
+#    Version 1.0.6344.26230    ###################################################################################################
+Log:
+Parameter eintragen bei ersten Aufruf der Anwendung jetzt möglich
 
 #    Version 1.0.625.20310    ###################################################################################################
 Log:
