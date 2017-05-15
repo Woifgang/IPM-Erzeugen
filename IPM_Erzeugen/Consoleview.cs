@@ -38,7 +38,7 @@ namespace IPM_Erzeugen
         }
 
 
-        public bool  BenutzerWillBeenden { get; private set; }
+        public bool BenutzerWillBeenden { get; private set; }
         public bool ParameterEnde { get;  set; }
 
         public int ParameterZaehlen { get; set; }

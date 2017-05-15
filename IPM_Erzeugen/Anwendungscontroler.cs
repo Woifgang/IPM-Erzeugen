@@ -22,7 +22,16 @@ namespace IPM_Erzeugen
 
             view.HoleBenutzereingabe();
             quelleErstellen.ErzeugeHeader();
-            quelleErstellen.ErzeugeAWLQuellcode();           
+            quelleErstellen.ErzeugeAWLQuellcode();
+            while (!view.ParameterEnde)
+            {
+                view.ParameterZaehlen = view.ParameterZaehlen + 1;
+                view.ParameterEingabe();
+                if (!view.ParameterEnde)
+                {
+                    quelleErstellen.ErzeugeParameter();
+                }
+            }
 
             while (!view.BenutzerWillBeenden )
             {

@@ -4,8 +4,6 @@
 
 #    Prioriät hoch:    #####################################################################################################
 	
-	- Sortierung der Benutzerabfragen
-		-- Parameter eintragen bei ersten Aufruf der Anwendung -> aktuell nur möglich ab dem zweiten Eingabeblock;
 	
 	           
 #    Prioriät niedrig:    ##################################################################################################
@@ -14,7 +12,7 @@
 
 #    Prioriät niedrig:    ###################################################################################################
 	- Netzwerktitel 
-		-- Merkmalnummer Splitten und in Titel einfügen "Merkmal" 1 STK
+		-- Merkmalnummer Splitten und in Titel einfügen "Merkmal" 1 STKs
 			-- Nur möglich wenn immer der Gleiche Buchstabe vorne dran ist
 			
 	- Merkmal Float Anzahl der Parameter in einpflegen;
@@ -28,7 +26,8 @@
 ############################################################################################################################
 #    Erledigt:    ##########################################################################################################
 ############################################################################################################################
-	
+	- Sortierung der Benutzerabfragen
+		-- Parameter eintragen bei ersten Aufruf der Anwendung -> aktuell nur möglich ab dem zweiten Eingabeblock;
 	- FC       CALL  "FC_KONV_REAL_CHAR" richtige Adresse hinzufügen;
 	- Ausgabe AWL Quelle erstellt erst nach Fertig;
 	- AWL-Quelle erst beim nach eingabe sämtlicher Daten erzeugen;
