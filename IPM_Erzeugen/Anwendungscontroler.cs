@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace IPM_Erzeugen
 {
@@ -54,7 +55,11 @@ namespace IPM_Erzeugen
             }
             quelleErstellen.ErzeugeEndFuncttion();
             view.AWLQuelleGeneriert(view.Zeitstempel);
+            string dateiName = @"C:\Users\Public\Merkmal_" + view.Zeitstempel + ".awl";
+            // Öffne erzeugte Datei mit Notepad
+            System.Diagnostics.Process.Start(@"C:\\WINDOWS\\system32\\notepad.exe", dateiName);
             view.BeendeProgramm();
+            
         }
 
     }
