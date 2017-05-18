@@ -85,7 +85,7 @@ namespace IPM_Erzeugen.MerkmalTyp
 
                 // Netzwerk 4 Kurfenwert Länge
                 awlQuellcode.Network,
-                awlQuellcode.NetzwerkTitel(view.Stationbezeichnung+ ": Merkmal XXX - Kurvenwert - Länge"),
+                awlQuellcode.NetzwerkTitel(view.Stationbezeichnung+ ": Merkmal XXX - Kurvenwert - Laenge"),
                 ladeStandartwert[0],transferiereKurvenwertLaenge[1],
                 ladeStandartwert[1],transferiereKurvenwertLaenge[2],
 
